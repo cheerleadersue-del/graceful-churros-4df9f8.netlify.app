@@ -1,13 +1,11 @@
 /* 센터 이미지 변경 */
 const centerItems = document.querySelectorAll(".center-item");
 const centerImage = document.getElementById("centerImage");
-const currentNum = document.getElementById("currentNum");
 
 if (centerItems.length && centerImage) {
   centerItems.forEach(item => {
     item.addEventListener("click", () => {
       const newImg = item.dataset.img;
-      const num = item.dataset.num;
 
       centerItems.forEach(i => i.classList.remove("active"));
       item.classList.add("active");
@@ -17,11 +15,9 @@ if (centerItems.length && centerImage) {
 
       setTimeout(() => {
         centerImage.src = newImg;
-        if (currentNum) currentNum.textContent = num;
-
         centerImage.style.opacity = "1";
-        centerImage.style.transform = "scale(1.03)";
-      }, 260);
+        centerImage.style.transform = "scale(1.02)";
+      }, 250);
     });
   });
 }
@@ -48,9 +44,9 @@ if (lawyerButtons.length && lawyerPhoto) {
         lawyerRole.textContent = button.dataset.role;
 
         lawyerCareer.innerHTML = "";
-        button.dataset.career.split("|").forEach(item => {
+        button.dataset.career.split("|").forEach(text => {
           const li = document.createElement("li");
-          li.textContent = item;
+          li.textContent = text;
           lawyerCareer.appendChild(li);
         });
 
@@ -59,4 +55,4 @@ if (lawyerButtons.length && lawyerPhoto) {
       }, 280);
     });
   });
-
+}
