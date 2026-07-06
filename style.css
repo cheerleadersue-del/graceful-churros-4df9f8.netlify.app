@@ -375,7 +375,6 @@ img{display:block;width:100%}
   .contact div{
     grid-template-columns:1fr;
   }
-}png
 /* ===========================
    LAWYER EDITORIAL
 =========================== */
@@ -596,7 +595,6 @@ img{display:block;width:100%}
   .lawyer-content h2{
     font-size:64px;
   }
-}png
 @media(max-width:900px){
   .hero-center{
     grid-template-columns:55% 45%;
@@ -656,7 +654,6 @@ img{display:block;width:100%}
     padding-left:10px;
     border-left:3px solid #b89458;
   }
-}png
 @media(max-width:900px){
   .hero-center{
     grid-template-columns:55% 45%;
@@ -1109,22 +1106,28 @@ img{display:block;width:100%}
     font-size:30px;
   }
 }
-/* 모바일 센터: 이미지 덮임 방지 */
+/* 모바일 센터 최종: 그림 고정, 목록만 스크롤 */
 @media(max-width:900px){
+
   .center-fixed{
     display:block !important;
+    background:#f7f5f0 !important;
   }
 
   .center-visual{
-    position:relative !important;
-    top:auto !important;
-    height:auto !important;
-    min-height:0 !important;
+    position:sticky !important;
+    top:70px !important;
+    height:58vh !important;
+    min-height:58vh !important;
+    z-index:1 !important;
+    overflow:hidden !important;
   }
 
   .center-visual img{
-    position:relative !important;
-    height:62vh !important;
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
     object-fit:cover !important;
   }
 
@@ -1132,14 +1135,53 @@ img{display:block;width:100%}
     position:absolute !important;
     left:24px !important;
     right:24px !important;
-    bottom:28px !important;
+    bottom:26px !important;
+    z-index:3 !important;
+  }
+
+  .center-overlay h1{
+    font-size:34px !important;
+    line-height:1.12 !important;
+    letter-spacing:-2px !important;
+  }
+
+  .center-overlay p{
+    font-size:14px !important;
+  }
+
+  .case-banner{
+    padding:16px 18px !important;
+    font-size:15px !important;
   }
 
   .center-menu{
     position:relative !important;
-    z-index:5 !important;
+    z-index:2 !important;
     background:#f7f5f0 !important;
     min-height:auto !important;
-    padding:42px 24px 80px !important;
+    padding:42px 24px 90px !important;
+  }
+
+  .center-item{
+    grid-template-columns:48px 1fr 28px !important;
+    gap:12px !important;
+    padding:24px 0 !important;
+  }
+
+  .center-item span{
+    font-size:24px !important;
+  }
+
+  .center-item strong{
+    font-size:36px !important;
+  }
+
+  .center-item em{
+    font-size:10px !important;
+    letter-spacing:2px !important;
+  }
+
+  .center-item b{
+    font-size:30px !important;
   }
 }
