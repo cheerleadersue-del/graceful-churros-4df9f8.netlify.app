@@ -866,3 +866,28 @@ img{display:block;width:100%}
     min-width:1200px !important;
   }
 }
+@media(max-width:900px){
+  .hero-center{
+    display:block !important;
+  }
+
+  .visual{
+    position:sticky !important;
+    top:0 !important;
+    z-index:1 !important;
+    height:58vh !important;
+    min-height:58vh !important;
+  }
+
+  .visual img{
+    height:58vh !important;
+    object-fit:cover !important;
+  }
+
+  .center-list{
+    position:relative !important;
+    z-index:2 !important;
+    background:#f7f5f0 !important;
+    padding:42px 28px 50px !important;
+  }
+}
