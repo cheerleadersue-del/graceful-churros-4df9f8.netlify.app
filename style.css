@@ -810,3 +810,59 @@ img{display:block;width:100%}
     font-size:11px !important;
   }
 }
+/* 모바일도 PC형 2분할 디자인 유지 */
+@media(max-width:900px){
+  body{
+    overflow-x:auto;
+  }
+
+  .hero-center{
+    width:1200px !important;
+    min-width:1200px !important;
+    display:grid !important;
+    grid-template-columns:58% 42% !important;
+    min-height:100vh !important;
+  }
+
+  .visual{
+    min-height:100vh !important;
+  }
+
+  .visual img{
+    height:100vh !important;
+  }
+
+  .center-list{
+    min-height:100vh !important;
+    padding:120px 6vw 50px !important;
+  }
+
+  .center-item{
+    grid-template-columns:70px 1fr 40px !important;
+    gap:20px !important;
+    padding:28px 0 !important;
+  }
+
+  .center-item span{
+    font-size:32px !important;
+  }
+
+  .center-item h2{
+    font-size:52px !important;
+    letter-spacing:-2px !important;
+  }
+
+  .center-item p{
+    font-size:13px !important;
+    letter-spacing:2px !important;
+  }
+
+  .center-item b{
+    display:block !important;
+    font-size:30px !important;
+  }
+
+  .header{
+    min-width:1200px !important;
+  }
+}
