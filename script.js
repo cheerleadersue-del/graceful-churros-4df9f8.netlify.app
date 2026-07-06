@@ -59,24 +59,4 @@ if (lawyerButtons.length && lawyerPhoto) {
       }, 280);
     });
   });
-}png
-const centerItems = document.querySelectorAll(".center-item");
-const centerImage = document.getElementById("centerImage");
 
-centerItems.forEach(item => {
-  item.addEventListener("click", () => {
-    const img = item.dataset.img;
-
-    centerItems.forEach(el => el.classList.remove("active"));
-    item.classList.add("active");
-
-    centerImage.style.opacity = "0";
-    centerImage.style.transform = "scale(1.06)";
-
-    setTimeout(() => {
-      centerImage.src = img;
-      centerImage.style.opacity = "1";
-      centerImage.style.transform = "scale(1.02)";
-    }, 260);
-  });
-});
