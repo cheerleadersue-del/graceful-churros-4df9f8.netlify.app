@@ -24,86 +24,103 @@
   <button class="menu">☰</button>
 </header>
 
-<section class="center-fixed" id="centers">
+<section class="hero-center" id="centers">
 
-  <div class="center-visual">
-    <img id="centerImage" src="assets/center-sexcrime.png" alt="성범죄">
+  <div class="visual">
+    <img id="centerImage" src="assets/center-sexcrime.png" alt="센터 이미지">
 
-    <div class="center-overlay">
+    <div class="visual-copy">
       <h1>증거는<br>결과를 만듭니다.</h1>
       <p class="gold">증거주의 · 수사중심</p>
       <p>
-        의뢰인이 미처 보지 못한 증거까지,<br>
+        의뢰인이 미처 보지 못한 증거까지.<br>
         새로운 관점으로 사건을 다시 설계합니다.
       </p>
+    </div>
 
-      <a class="case-banner" href="cases.html">
-        성공사례 보기
-        <span>→</span>
-      </a>
+    <div class="pager">
+      <span id="currentNum">01</span>
+      <i></i>
+      <span>08</span>
     </div>
   </div>
 
-  <div class="center-menu">
+  <div class="center-list">
 
-    <button class="center-item active" data-img="assets/center-sexcrime.png">
+    <div class="center-item active" data-img="assets/center-sexcrime.png" data-num="01">
       <span>01</span>
-      <strong>성범죄</strong>
-      <em>SEX CRIME DEFENSE</em>
+      <div>
+        <h2>성범죄</h2>
+        <p>SEX CRIME DEFENSE</p>
+      </div>
       <b>→</b>
-    </button>
+    </div>
 
-    <button class="center-item" data-img="assets/center-criminal.png">
+    <div class="center-item" data-img="assets/center-criminal.png" data-num="02">
       <span>02</span>
-      <strong>형사</strong>
-      <em>CRIMINAL DEFENSE</em>
+      <div>
+        <h2>형사</h2>
+        <p>CRIMINAL DEFENSE</p>
+      </div>
       <b>→</b>
-    </button>
+    </div>
 
-    <button class="center-item" data-img="assets/center-school.png">
+    <div class="center-item" data-img="assets/center-school.png" data-num="03">
       <span>03</span>
-      <strong>학교폭력</strong>
-      <em>SCHOOL VIOLENCE</em>
+      <div>
+        <h2>학교폭력</h2>
+        <p>SCHOOL VIOLENCE</p>
+      </div>
       <b>→</b>
-    </button>
+    </div>
 
-    <button class="center-item" data-img="assets/center-traffic.png">
+    <div class="center-item" data-img="assets/center-traffic.png" data-num="04">
       <span>04</span>
-      <strong>교통사고</strong>
-      <em>TRAFFIC ACCIDENT</em>
+      <div>
+        <h2>교통사고</h2>
+        <p>TRAFFIC ACCIDENT</p>
+      </div>
       <b>→</b>
-    </button>
+    </div>
 
-    <button class="center-item" data-img="assets/center-medical.png">
+    <div class="center-item" data-img="assets/center-medical.png" data-num="05">
       <span>05</span>
-      <strong>의료사고</strong>
-      <em>MEDICAL DISPUTE</em>
+      <div>
+        <h2>의료사고</h2>
+        <p>MEDICAL DISPUTE</p>
+      </div>
       <b>→</b>
-    </button>
+    </div>
 
-    <button class="center-item" data-img="assets/center-infection.png">
+    <div class="center-item" data-img="assets/center-infection.png" data-num="06">
       <span>06</span>
-      <strong>감염분쟁</strong>
-      <em>INFECTION DISPUTE</em>
+      <div>
+        <h2>감염분쟁</h2>
+        <p>INFECTION DISPUTE</p>
+      </div>
       <b>→</b>
-    </button>
+    </div>
 
-    <button class="center-item" data-img="assets/center-family.png">
+    <div class="center-item" data-img="assets/center-family.png" data-num="07">
       <span>07</span>
-      <strong>이혼·상속</strong>
-      <em>FAMILY LAW</em>
+      <div>
+        <h2>이혼·상속</h2>
+        <p>FAMILY LAW</p>
+      </div>
       <b>→</b>
-    </button>
+    </div>
 
-    <button class="center-item" data-img="assets/center-bankruptcy.png">
+    <div class="center-item" data-img="assets/center-bankruptcy.png" data-num="08">
       <span>08</span>
-      <strong>회생·파산</strong>
-      <em>REHABILITATION · BANKRUPTCY</em>
+      <div>
+        <h2>회생·파산</h2>
+        <p>REHABILITATION · BANKRUPTCY</p>
+      </div>
       <b>→</b>
-    </button>
+    </div>
 
   </div>
-</section>
+
 <section class="lawyer-showcase" id="lawyers">
   <div class="lawyer-photo">
     <img id="lawyerPhoto" src="assets/lawyer-01.png" alt="정호길">
@@ -114,13 +131,10 @@
 
     <h2 id="lawyerName">정호길</h2>
     <p id="lawyerRole">대표변호사 · 25년 경력 형사전문</p>
-   <ul id="lawyerCareer">
-    <li>강력 사건 총괄</li>
-    <li>마약 사건 직접 검토</li>
-    <li>형사 사건 직접 변론</li>
-    <li>수사 기관의 시각에서 증거와 진술의 흐름 분석</li>
-</ul>  
-  <div class="lawyer-nav">
+      <li>수사기관의 시각에서 증거와 진술의 흐름 분석</li>
+    </ul>
+
+    <div class="lawyer-nav">
       <button class="active" data-img="assets/lawyer-01.png" data-name="정호길" data-role="대표변호사 · 25년 경력 형사전문" data-career="광수대 강력사건 총괄|마약 사건 직접 검토|형사사건 직접 변론|수사기관의 시각에서 증거와 진술의 흐름 분석">정호길</button>
 
       <button data-img="assets/lawyer-02.png" data-name="김제도" data-role="변호사 · 형사사건 대응" data-career="초기 진술 전략 검토|조사 대응 방향 설계|증거자료 검토|사건별 쟁점 정리">김제도</button>
@@ -132,8 +146,7 @@
       <button data-img="assets/lawyer-05.png" data-name="이경숙" data-role="변호사 · 사건 관리" data-career="의뢰인 상황 분석|분쟁 해결 방향 설계|가사·민사 사건 검토|안정적인 사건 진행 관리">이경숙</button>
     </div>
   </div>
-</section>
-  <section class="contact" id="contact">
+</section><section class="contact" id="contact">
   <h2>지금 필요한 것은<br><strong>빠른 판단과 정확한 대응</strong>입니다.</h2>
 
   <div>
