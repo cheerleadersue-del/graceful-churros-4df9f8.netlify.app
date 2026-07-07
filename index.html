@@ -16,145 +16,189 @@
   </div>
 
   <nav>
-    <a href="#centers">전문센터</a>
+    <a href="#practice">전문센터</a>
     <a href="#lawyers">변호인단</a>
-    <a href="#contact">상담</a>
+    <a href="#contact">상담안내</a>
+    <a href="#location">오시는 길</a>
   </nav>
 
   <button class="menu">☰</button>
 </header>
 
-<section class="hero-center" id="centers">
+<section class="practice-section" id="practice">
 
-  <div class="visual">
-    <img id="centerImage" src="assets/center-sexcrime.png" alt="센터 이미지">
+  <div class="practice-visual">
+    <img id="practiceImage" src="assets/center-sexcrime.png" alt="성범죄센터">
 
-    <div class="visual-copy">
-      <h1>증거는<br>결과를 만듭니다.</h1>
+    <div class="practice-copy">
+      <h1 id="practiceTitle">증거는<br>결과를 만듭니다.</h1>
       <p class="gold">증거주의 · 수사중심</p>
-      <p>
-        의뢰인이 미처 보지 못한 증거까지.<br>
-        새로운 관점으로 사건을 다시 설계합니다.
+      <p id="practiceDesc">
+        의뢰인이 미처 보지 못한 증거까지,<br>
+        새로운 관점으로 대응 로드맵을 제시합니다.
       </p>
     </div>
 
-    <div class="pager">
-      <span id="currentNum">01</span>
-      <i></i>
-      <span>08</span>
-    </div>
+    <a href="cases.html" class="case-banner">
+      <div>
+        <strong>성공사례 보기</strong>
+        <span id="caseText">성범죄센터 해결 사례 확인</span>
+      </div>
+      <b>→</b>
+    </a>
   </div>
 
-  <div class="center-list">
+  <div class="practice-list">
 
-    <div class="center-item active" data-img="assets/center-sexcrime.png" data-num="01">
-      <span>01</span>
-      <div>
-        <h2>성범죄</h2>
-        <p>SEX CRIME DEFENSE</p>
-      </div>
-      <b>→</b>
-    </div>
+    <button class="practice-item active"
+      data-img="assets/center-sexcrime.png"
+      data-case="성범죄센터 해결 사례 확인"
+      data-title="성범죄센터"
+      data-desc="강간 · 준강간 · 강제추행 · 통매음 · 아청법 · 성매매 · 딥페이크 · 무고죄">
+      <span>01</span><div><strong>성범죄 센터</strong><em>SEX CRIME DEFENSE</em><p>강간 · 준강간 · 강제추행 · 통매음 · 아청법 · 성매매 · 딥페이크 · 무고죄</p></div><b>→</b>
+    </button>
 
-    <div class="center-item" data-img="assets/center-criminal.png" data-num="02">
-      <span>02</span>
-      <div>
-        <h2>형사</h2>
-        <p>CRIMINAL DEFENSE</p>
-      </div>
-      <b>→</b>
-    </div>
+    <button class="practice-item"
+      data-img="assets/center-criminal.png"
+      data-case="형사센터 해결 사례 확인"
+      data-title="형사센터"
+      data-desc="상해 · 특수폭행 · 마약 · 배임 · 횡령 · 코인OTC · 범죄수익은닉 · 불송치 · 구속영장실질심사">
+      <span>02</span><div><strong>형사 센터</strong><em>CRIMINAL DEFENSE</em><p>상해 · 특수폭행 · 마약 · 배임 · 횡령 · 코인OTC · 범죄수익은닉 · 불송치 · 구속영장실질심사</p></div><b>→</b>
+    </button>
 
-    <div class="center-item" data-img="assets/center-school.png" data-num="03">
-      <span>03</span>
-      <div>
-        <h2>학교폭력</h2>
-        <p>SCHOOL VIOLENCE</p>
-      </div>
-      <b>→</b>
-    </div>
+    <button class="practice-item"
+      data-img="assets/center-school.png"
+      data-case="학교폭력센터 해결 사례 확인"
+      data-title="학교폭력센터"
+      data-desc="학폭위 · 소년재판 · 청소년성범죄 · 피해학생 보호 · 가해학생 방어">
+      <span>03</span><div><strong>학교폭력 센터</strong><em>SCHOOL VIOLENCE</em><p>학폭위 · 소년재판 · 청소년성범죄 · 피해학생 보호 · 가해학생 방어</p></div><b>→</b>
+    </button>
 
-    <div class="center-item" data-img="assets/center-traffic.png" data-num="04">
-      <span>04</span>
-      <div>
-        <h2>교통사고</h2>
-        <p>TRAFFIC ACCIDENT</p>
-      </div>
-      <b>→</b>
-    </div>
+    <button class="practice-item"
+      data-img="assets/center-medical.png"
+      data-case="의료사고센터 해결 사례 확인"
+      data-title="의료사고센터"
+      data-desc="업무상과실치사상 · 설명의무위반 · 의무기록위조 · 의료법위반">
+      <span>04</span><div><strong>의료사고 센터</strong><em>MEDICAL DISPUTE</em><p>업무상과실치사상 · 설명의무위반 · 의무기록위조 · 의료법위반</p></div><b>→</b>
+    </button>
 
-    <div class="center-item" data-img="assets/center-medical.png" data-num="05">
-      <span>05</span>
-      <div>
-        <h2>의료사고</h2>
-        <p>MEDICAL DISPUTE</p>
-      </div>
-      <b>→</b>
-    </div>
+    <button class="practice-item"
+      data-img="assets/center-infection.png"
+      data-case="감염분쟁센터 해결 사례 확인"
+      data-title="감염분쟁센터"
+      data-desc="헤르페스 · 곤지름(HPV) · 에이즈 · 병원감염 · 감염 경위 분석">
+      <span>05</span><div><strong>감염분쟁 센터</strong><em>INFECTION DISPUTE</em><p>헤르페스 · 곤지름(HPV) · 에이즈 · 병원감염 · 감염 경위 분석</p></div><b>→</b>
+    </button>
 
-    <div class="center-item" data-img="assets/center-infection.png" data-num="06">
-      <span>06</span>
-      <div>
-        <h2>감염분쟁</h2>
-        <p>INFECTION DISPUTE</p>
-      </div>
-      <b>→</b>
-    </div>
+    <button class="practice-item"
+      data-img="assets/center-bankruptcy.png"
+      data-case="회생·파산센터 해결 사례 확인"
+      data-title="회생·파산센터"
+      data-desc="개인회생 · 파산 · 채무조정 · 신용불량 · 압류해제 · 채권추심 대응">
+      <span>06</span><div><strong>회생·파산 센터</strong><em>REHABILITATION · BANKRUPTCY</em><p>개인회생 · 파산 · 채무조정 · 신용불량 · 압류해제 · 채권추심 대응</p></div><b>→</b>
+    </button>
 
-    <div class="center-item" data-img="assets/center-family.png" data-num="07">
-      <span>07</span>
-      <div>
-        <h2>이혼·상속</h2>
-        <p>FAMILY LAW</p>
-      </div>
-      <b>→</b>
-    </div>
+    <button class="practice-item"
+      data-img="assets/center-traffic.png"
+      data-case="교통사고센터 해결 사례 확인"
+      data-title="교통사고센터"
+      data-desc="음주운전 · 뺑소니 · 12대 중과실 · 형사합의 · 보험분쟁 · 손해배상">
+      <span>07</span><div><strong>교통사고 센터</strong><em>TRAFFIC ACCIDENT</em><p>음주운전 · 뺑소니 · 12대 중과실 · 형사합의 · 보험분쟁 · 손해배상</p></div><b>→</b>
+    </button>
 
-    <div class="center-item" data-img="assets/center-bankruptcy.png" data-num="08">
-      <span>08</span>
-      <div>
-        <h2>회생·파산</h2>
-        <p>REHABILITATION · BANKRUPTCY</p>
-      </div>
-      <b>→</b>
-    </div>
+    <button class="practice-item"
+      data-img="assets/center-family.png"
+      data-case="이혼·상속센터 해결 사례 확인"
+      data-title="이혼·상속센터"
+      data-desc="이혼소송 · 재산분할 · 위자료 · 양육권 · 상속분쟁 · 유류분 · 상속포기">
+      <span>08</span><div><strong>이혼·상속 센터</strong><em>FAMILY LAW</em><p>이혼소송 · 재산분할 · 위자료 · 양육권 · 상속분쟁 · 유류분 · 상속포기</p></div><b>→</b>
+    </button>
 
-  </div>
-
-<section class="lawyer-showcase" id="lawyers">
-  <div class="lawyer-photo">
-    <img id="lawyerPhoto" src="assets/lawyer-01.png" alt="정호길">
-  </div>
-
-  <div class="lawyer-content">
-    <span class="eyebrow">LAWYERS OF YUIL</span>
-
-    <h2 id="lawyerName">정호길</h2>
-    <p id="lawyerRole">대표변호사 · 25년 경력 형사전문</p>
-      <li>수사기관의 시각에서 증거와 진술의 흐름 분석</li>
-    </ul>
-
-    <div class="lawyer-nav">
-      <button class="active" data-img="assets/lawyer-01.png" data-name="정호길" data-role="대표변호사 · 25년 경력 형사전문" data-career="광수대 강력사건 총괄|마약 사건 직접 검토|형사사건 직접 변론|수사기관의 시각에서 증거와 진술의 흐름 분석">정호길</button>
-
-      <button data-img="assets/lawyer-02.png" data-name="김제도" data-role="변호사 · 형사사건 대응" data-career="초기 진술 전략 검토|조사 대응 방향 설계|증거자료 검토|사건별 쟁점 정리">김제도</button>
-
-      <button data-img="assets/lawyer-03.png" data-name="정주형" data-role="변호사 · 수사 대응" data-career="수사 단계 대응 전략|기록 속 모순 분석|고소·피고소 사건 검토|방어 포인트 정리">정주형</button>
-
-      <button data-img="assets/lawyer-04.png" data-name="김의환" data-role="변호사 · 증거 분석" data-career="사실관계 구조화|증거 흐름 분석|법리 검토|의뢰인별 대응 로드맵 설계">김의환</button>
-
-      <button data-img="assets/lawyer-05.png" data-name="이경숙" data-role="변호사 · 사건 관리" data-career="의뢰인 상황 분석|분쟁 해결 방향 설계|가사·민사 사건 검토|안정적인 사건 진행 관리">이경숙</button>
-    </div>
-  </div>
-</section><section class="contact" id="contact">
-  <h2>지금 필요한 것은<br><strong>빠른 판단과 정확한 대응</strong>입니다.</h2>
-
-  <div>
-    <a href="tel:01000000000">전화상담</a>
-    <a href="#">카카오톡 상담</a>
-    <a href="#">온라인 상담</a>
   </div>
 </section>
+
+<section class="lawyers" id="lawyers">
+  <div class="section-head">
+    <span>LAWYERS OF YUIL</span>
+    <h2>변호인단 소개</h2>
+    <p>
+      한 명의 의뢰인에게 <strong>변호인단 전체의 전략.</strong><br>
+      의뢰인이 미처 보지 못한 증거와 형사사건의 수사기록까지<br>
+      유일은 대응 로드맵을 제시합니다.
+    </p>
+  </div>
+
+  <div class="lawyer-track">
+    <article>
+      <img src="assets/lawyer-01.png" alt="정호길">
+      <small>대표변호사</small>
+      <h3>정호길</h3>
+      <p>25년 경력 형사전문 · 수사기관 시각의 증거 분석</p>
+      <ul><li>형사전문</li><li>대표 사건 총괄</li><li>수사 대응 로드맵 설계</li></ul>
+    </article>
+
+    <article>
+      <img src="assets/lawyer-02.png" alt="김제도">
+      <small>변호사</small>
+      <h3>김제도</h3>
+      <p>초기 진술 전략 · 조사 대응 설계</p>
+      <ul><li>형사사건 대응</li><li>증거자료 검토</li><li>쟁점 정리</li></ul>
+    </article>
+
+    <article>
+      <img src="assets/lawyer-03.png" alt="정주형">
+      <small>변호사</small>
+      <h3>정주형</h3>
+      <p>기록 분석 · 고소/피고소 사건 검토</p>
+      <ul><li>수사 대응</li><li>기록 검토</li><li>방어 포인트 설계</li></ul>
+    </article>
+
+    <article>
+      <img src="assets/lawyer-04.png" alt="김의환">
+      <small>변호사</small>
+      <h3>김의환</h3>
+      <p>사실관계 구조화 · 증거 흐름 분석</p>
+      <ul><li>증거 분석</li><li>법리 검토</li><li>로드맵 설계</li></ul>
+    </article>
+
+    <article>
+      <img src="assets/lawyer-05.png" alt="이경숙">
+      <small>변호사</small>
+      <h3>이경숙</h3>
+      <p>의뢰인 상황 분석 · 안정적인 사건 관리</p>
+      <ul><li>사건 관리</li><li>가사·민사 검토</li><li>분쟁 해결 방향 설계</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>상담안내</h2>
+  <p>빠른 상담이 해결의 시작입니다.</p>
+
+  <div class="contact-grid">
+    <a href="tel:01000000000">☎ 전화 상담</a>
+    <a href="#">💬 카톡 상담</a>
+    <a href="#">📅 상담 예약</a>
+  </div>
+</section>
+
+<section class="location" id="location">
+  <div>
+    <h2>오시는 길</h2>
+    <p>서울특별시 서초구 서초대로 123,<br>법무법인 유일</p>
+    <a href="#">지도 자세히 보기 →</a>
+  </div>
+
+  <div class="map">
+    <span>LAW FIRM YUIL</span>
+  </div>
+</section>
+
+<aside class="quick-banner">
+  <a href="#">💬<span>카톡상담</span></a>
+  <a href="tel:01000000000">☎<span>전화상담</span></a>
+  <a href="#">📅<span>상담예약</span></a>
+</aside>
 
 <script src="script.js"></script>
 </body>
