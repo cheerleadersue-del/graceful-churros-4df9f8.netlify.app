@@ -3,56 +3,47 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR",Arial,sans-serif;
-  background:#f7f5f0;
+  background:#0b0b0b;
   color:#111;
 }
 a{text-decoration:none;color:inherit}
+button{font-family:inherit}
 img{display:block;width:100%}
 
 :root{
   --gold:#b89458;
-  --black:#111;
-  --gray:#aaa;
+  --cream:#f7f5f0;
+  --black:#0b0b0b;
 }
-
-/* HEADER */
 
 .header{
   position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  height:82px;
-  z-index:100;
+  top:0;left:0;right:0;
+  height:78px;
+  z-index:1000;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 46px;
-  background:rgba(247,245,240,.78);
-  backdrop-filter:blur(16px);
+  padding:0 42px;
+  color:#fff;
+  mix-blend-mode:difference;
 }
 
 .logo{
   font-weight:800;
   font-size:22px;
-  letter-spacing:-1px;
 }
-
 .logo span{
   display:block;
   font-size:11px;
-  letter-spacing:1.8px;
-  color:#777;
+  letter-spacing:2px;
   margin-top:4px;
 }
-
 .header nav{
   display:flex;
-  gap:42px;
-  font-size:14px;
-  color:#555;
+  gap:38px;
+  font-size:13px;
 }
-
 .menu{
   width:54px;
   height:54px;
@@ -60,709 +51,17 @@ img{display:block;width:100%}
   border:0;
   background:#111;
   color:#fff;
-  font-size:25px;
+  font-size:24px;
 }
 
-/* LAWYERS */
-
-.lawyers{
-  background:#0b0b0b;
-  color:#fff;
-  padding:110px 0;
-}
-
-.lawyer-title{
-  padding:0 6vw 50px;
-}
-
-.lawyer-title span{
-  color:var(--gold);
-  letter-spacing:3px;
-  font-size:13px;
-}
-
-.lawyer-title h2{
-  margin:22px 0;
-  font-size:clamp(44px,7vw,86px);
-  line-height:1.1;
-  letter-spacing:-4px;
-}
-
-.lawyer-title p{
-  color:#aaa;
-  font-size:20px;
-}
-
-.lawyer-track{
-  display:flex;
-  gap:18px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding:0 6vw;
-}
-
-.lawyer-track::-webkit-scrollbar{display:none}
-
-.lawyer-track article{
-  min-width:310px;
-  height:470px;
-  position:relative;
-  overflow:hidden;
-  background:#111;
-  scroll-snap-align:center;
-}
-
-.lawyer-track img{
-  height:100%;
-  object-fit:cover;
-  object-position:top center;
-  filter:brightness(.82);
-}
-
-.lawyer-track article::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,.86));
-}
-
-.lawyer-track span{
-  position:absolute;
-  left:24px;
-  bottom:78px;
-  color:var(--gold);
-  z-index:2;
-}
-
-.lawyer-track h3{
-  position:absolute;
-  left:24px;
-  bottom:28px;
-  margin:0;
-  font-size:34px;
-  z-index:2;
-}
-
-/* CONTACT */
-
-.contact{
-  padding:110px 6vw;
-  background:#111;
-  color:#fff;
-}
-
-.contact h2{
-  margin:0;
-  font-size:clamp(42px,7vw,90px);
-  line-height:1.12;
-  letter-spacing:-4px;
-  font-weight:400;
-}
-
-.contact strong{
-  color:var(--gold);
-}
-
-.contact div{
-  margin-top:46px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  max-width:900px;
-}
-
-.contact a{
-  padding:24px;
-  border:1px solid rgba(184,148,88,.55);
-  text-align:center;
-  font-weight:800;
-}
-
-.contact a:first-child{
-  background:var(--gold);
-  color:#111;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-  .header{
-    height:70px;
-    padding:0 18px;
-  }
-
-  .header nav{
-    display:none;
-  }
-
-  .hero-center{
-    grid-template-columns:1fr;
-  }
-
-  .visual{
-    min-height:58vh;
-  }
-
-  .visual-copy{
-    left:24px;
-    right:24px;
-    bottom:80px;
-  }
-
-  .visual-copy h1{
-    font-size:48px;
-  }
-
-  .center-list{
-    min-height:auto;
-    padding:42px 24px;
-  }
-
-  .center-item{
-    grid-template-columns:52px 1fr 24px;
-    padding:22px 0;
-  }
-
-  .center-item h2{
-    font-size:34px;
-  }
-
-  .center-item span{
-    font-size:24px;
-  }
-
-  .lawyer-track article{
-    min-width:78vw;
-  }
-
-  .contact div{
-    grid-template-columns:1fr;
-  }
-/* ===========================
-   LAWYER EDITORIAL
-=========================== */
-
-.lawyer-editorial{
-  min-height:100vh;
-  display:grid;
-  grid-template-columns:52% 48%;
-  background:#080808;
-  color:#fff;
-  border-top:1px solid rgba(255,255,255,.1);
-}
-
-.editorial-photo{
-  height:100vh;
-  position:sticky;
-  top:0;
-  overflow:hidden;
-  background:#111;
-}
-
-.editorial-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:top center;
-  filter:brightness(.78);
-  transition:opacity .45s ease, transform .8s ease;
-}
-
-.editorial-info{
-  min-height:100vh;
-  padding:110px 6vw;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.editorial-info .eyebrow{
-  color:#b89458;
-  letter-spacing:3px;
-  font-size:13px;
-  font-weight:800;
-}
-
-.editorial-info h2{
-  margin:26px 0 18px;
-  font-size:clamp(72px,9vw,140px);
-  line-height:.9;
-  letter-spacing:-7px;
-  font-weight:900;
-}
-
-.editorial-info p{
-  margin:0 0 46px;
-  color:#b89458;
-  font-size:22px;
-}
-
-.editorial-info ul{
-  list-style:none;
-  padding:0;
-  margin:0 0 60px;
-}
-
-.editorial-info li{
-  padding:18px 0;
-  border-bottom:1px solid rgba(255,255,255,.14);
-  color:#ccc;
-  font-size:18px;
-}
-
-.lawyer-tabs{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.lawyer-tabs button{
-  padding:14px 18px;
-  border:1px solid rgba(184,148,88,.5);
-  background:transparent;
-  color:#aaa;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.lawyer-tabs button.active,
-.lawyer-tabs button:hover{
-  background:#b89458;
-  color:#080808;
-  font-weight:900;
-}
-
-@media(max-width:900px){
-  .lawyer-editorial{
-    grid-template-columns:1fr;
-  }
-
-  .editorial-photo{
-    position:relative;
-    height:58vh;
-  }
-
-  .editorial-info{
-    min-height:auto;
-    padding:60px 24px;
-  }
-
-  .editorial-info h2{
-    font-size:64px;
-  }
-}
-.lawyer-showcase{
-  min-height:100vh;
-  display:grid;
-  grid-template-columns:54% 46%;
-  background:#080808;
-  color:#fff;
-}
-
-.lawyer-photo{
-  height:100vh;
-  position:sticky;
-  top:0;
-  overflow:hidden;
-  background:#111;
-}
-
-.lawyer-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:top center;
-  filter:brightness(.88);
-  transition:opacity .35s ease, transform .8s ease;
-}
-
-.lawyer-content{
-  min-height:100vh;
-  padding:110px 6vw;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.eyebrow{
-  color:#b89458;
-  letter-spacing:3px;
-  font-size:13px;
-  font-weight:800;
-}
-
-.lawyer-content h2{
-  margin:26px 0 18px;
-  font-size:clamp(72px,9vw,140px);
-  line-height:.9;
-  letter-spacing:-7px;
-  font-weight:900;
-}
-
-.lawyer-content p{
-  margin:0 0 44px;
-  color:#b89458;
-  font-size:22px;
-}
-
-.lawyer-content ul{
-  list-style:none;
-  padding:0;
-  margin:0 0 54px;
-}
-
-.lawyer-content li{
-  padding:17px 0;
-  border-bottom:1px solid rgba(255,255,255,.14);
-  color:#ccc;
-  font-size:18px;
-}
-
-.lawyer-nav{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.lawyer-nav button{
-  padding:14px 18px;
-  border:1px solid rgba(184,148,88,.5);
-  background:transparent;
-  color:#aaa;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.lawyer-nav button.active,
-.lawyer-nav button:hover{
-  background:#b89458;
-  color:#080808;
-  font-weight:900;
-}
-
-@media(max-width:900px){
-  .lawyer-showcase{
-    grid-template-columns:1fr;
-  }
-
-  .lawyer-photo{
-    position:relative;
-    height:58vh;
-  }
-
-  .lawyer-content{
-    min-height:auto;
-    padding:58px 24px;
-  }
-
-  .lawyer-content h2{
-    font-size:64px;
-  }
-@media(max-width:900px){
-  .hero-center{
-    grid-template-columns:55% 45%;
-    min-height:100vh;
-  }
-
-  .visual{
-    min-height:100vh;
-  }
-
-  .center-list{
-    min-height:100vh;
-    padding:88px 18px 28px;
-    overflow-y:auto;
-  }
-
-  .visual-copy{
-    left:18px;
-    right:18px;
-    bottom:80px;
-  }
-
-  .visual-copy h1{
-    font-size:30px;
-  }
-
-  .visual-copy p{
-    font-size:13px;
-  }
-
-  .center-item{
-    grid-template-columns:32px 1fr 18px;
-    gap:8px;
-    padding:17px 0;
-  }
-
-  .center-item span{
-    font-size:15px;
-  }
-
-  .center-item h2{
-    font-size:22px;
-    letter-spacing:-1px;
-  }
-
-  .center-item p{
-    font-size:9px;
-    letter-spacing:1px;
-  }
-
-  .center-item b{
-    font-size:18px;
-  }
-
-  .center-item.active,
-  .center-item:hover{
-    padding-left:10px;
-    border-left:3px solid #b89458;
-  }
-@media(max-width:900px){
-  .hero-center{
-    grid-template-columns:55% 45%;
-    min-height:100vh;
-  }
-
-  .visual{
-    min-height:100vh;
-  }
-
-  .center-list{
-    min-height:100vh;
-    padding:88px 18px 28px;
-    overflow-y:auto;
-  }
-
-  .visual-copy{
-    left:18px;
-    right:18px;
-    bottom:80px;
-  }
-
-  .visual-copy h1{
-    font-size:30px;
-  }
-
-  .visual-copy p{
-    font-size:13px;
-  }
-
-  .center-item{
-    grid-template-columns:32px 1fr 18px;
-    gap:8px;
-    padding:17px 0;
-  }
-
-  .center-item span{
-    font-size:15px;
-  }
-
-  .center-item h2{
-    font-size:22px;
-    letter-spacing:-1px;
-  }
-
-  .center-item p{
-    font-size:9px;
-    letter-spacing:1px;
-  }
-
-  .center-item b{
-    font-size:18px;
-  }
-
-  .center-item.active,
-  .center-item:hover{
-    padding-left:10px;
-    border-left:3px solid #b89458;
-  }
-}
-@media(max-width:900px){
-  .hero-center{
-    grid-template-columns:55% 45% !important;
-    min-height:100vh !important;
-  }
-
-  .visual{
-    min-height:100vh !important;
-  }
-
-  .center-list{
-    min-height:100vh !important;
-    padding:88px 14px 28px !important;
-    overflow-y:auto !important;
-  }
-
-  .center-item{
-    grid-template-columns:28px 1fr 14px !important;
-    gap:7px !important;
-    padding:16px 0 !important;
-  }
-
-  .center-item span{
-    font-size:14px !important;
-  }
-
-  .center-item h2{
-    font-size:20px !important;
-    letter-spacing:-1px !important;
-  }
-
-  .center-item p{
-    font-size:8px !important;
-    letter-spacing:.8px !important;
-  }
-
-  .center-item b{
-    font-size:16px !important;
-  }
-}
-/* 모바일에서도 센터 리스트 오른쪽 고정 */
-@media(max-width:900px){
-  .hero-center{
-    display:grid !important;
-    grid-template-columns:56% 44% !important;
-    min-height:100vh !important;
-  }
-
-  .visual{
-    min-height:100vh !important;
-  }
-
-  .center-list{
-    display:block !important;
-    min-height:100vh !important;
-    padding:86px 10px 24px !important;
-    overflow-y:auto !important;
-    background:#f7f5f0 !important;
-  }
-
-  .center-item{
-    display:grid !important;
-    grid-template-columns:24px 1fr !important;
-    gap:6px !important;
-    padding:15px 0 !important;
-  }
-
-  .center-item b{
-    display:none !important;
-  }
-
-  .center-item span{
-    font-size:13px !important;
-  }
-
-  .center-item h2{
-    font-size:19px !important;
-    line-height:1.05 !important;
-  }
-
-  .center-item p{
-    font-size:7px !important;
-    letter-spacing:.5px !important;
-  }
-
-  .visual-copy h1{
-    font-size:25px !important;
-  }
-
-  .visual-copy p{
-    font-size:11px !important;
-  }
-}
-/* 모바일도 PC형 2분할 디자인 유지 */
-@media(max-width:900px){
-  body{
-    overflow-x:auto;
-  }
-
-  .hero-center{
-    width:1200px !important;
-    min-width:1200px !important;
-    display:grid !important;
-    grid-template-columns:58% 42% !important;
-    min-height:100vh !important;
-  }
-
-  .visual{
-    min-height:100vh !important;
-  }
-
-  .visual img{
-    height:100vh !important;
-  }
-
-  .center-list{
-    min-height:100vh !important;
-    padding:120px 6vw 50px !important;
-  }
-
-  .center-item{
-    grid-template-columns:70px 1fr 40px !important;
-    gap:20px !important;
-    padding:28px 0 !important;
-  }
-
-  .center-item span{
-    font-size:32px !important;
-  }
-
-  .center-item h2{
-    font-size:52px !important;
-    letter-spacing:-2px !important;
-  }
-
-  .center-item p{
-    font-size:13px !important;
-    letter-spacing:2px !important;
-  }
-
-  .center-item b{
-    display:block !important;
-    font-size:30px !important;
-  }
-
-  .header{
-    min-width:1200px !important;
-  }
-}
-@media(max-width:900px){
-  .hero-center{
-    display:block !important;
-  }
-
-  .visual{
-    position:sticky !important;
-    top:0 !important;
-    z-index:1 !important;
-    height:58vh !important;
-    min-height:58vh !important;
-  }
-
-  .visual img{
-    height:58vh !important;
-    object-fit:cover !important;
-  }
-
-  .center-list{
-    position:relative !important;
-    z-index:2 !important;
-    background:#f7f5f0 !important;
-    padding:42px 28px 50px !important;
-  }
-}
-/* ===========================
-   CENTER FIXED SPLIT
-=========================== */
-
-.center-fixed{
+/* 전문센터 */
+.practice-section{
   display:grid;
   grid-template-columns:58% 42%;
-  min-height:100vh;
-  background:#f7f5f0;
+  background:var(--cream);
 }
 
-.center-visual{
+.practice-visual{
   position:sticky;
   top:0;
   height:100vh;
@@ -770,91 +69,94 @@ img{display:block;width:100%}
   background:#111;
 }
 
-.center-visual img{
+.practice-visual img{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
   transition:opacity .45s ease, transform .9s ease;
 }
 
-.center-visual::after{
+.practice-visual::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(0,0,0,.05),
-    rgba(0,0,0,.48)
-  );
+  background:linear-gradient(to bottom,rgba(0,0,0,.06),rgba(0,0,0,.58));
 }
 
-.center-overlay{
+.practice-copy{
   position:absolute;
   left:7%;
-  bottom:8%;
+  bottom:20%;
   z-index:2;
   color:#fff;
-  max-width:620px;
+  max-width:660px;
 }
 
-.center-overlay h1{
+.practice-copy h1{
   margin:0 0 26px;
-  font-size:clamp(52px,6vw,96px);
+  font-size:clamp(54px,6vw,98px);
   line-height:1.05;
   letter-spacing:-4px;
-  font-weight:600;
+  font-weight:500;
 }
 
-.center-overlay p{
-  margin:0 0 16px;
+.practice-copy p{
   font-size:20px;
   line-height:1.7;
 }
 
-.center-overlay .gold{
-  color:#b89458;
-  font-weight:800;
-}
+.gold{color:var(--gold);font-weight:800}
 
 .case-banner{
-  margin-top:34px;
-  width:min(360px,100%);
+  position:absolute;
+  left:7%;
+  right:7%;
+  bottom:6%;
+  z-index:3;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:20px 24px;
-  border:1px solid rgba(255,255,255,.5);
-  background:rgba(255,255,255,.12);
-  backdrop-filter:blur(12px);
+  padding:22px 26px;
+  border:1px solid rgba(255,255,255,.55);
+  background:rgba(0,0,0,.34);
+  backdrop-filter:blur(16px);
   color:#fff;
-  font-size:18px;
-  font-weight:900;
-  transition:.35s;
+  transition:.3s;
 }
-
-.case-banner:hover{
-  background:#b89458;
-  color:#111;
-  border-color:#b89458;
+.case-banner strong{
+  display:block;
+  font-size:20px;
 }
-
 .case-banner span{
-  font-size:26px;
+  display:block;
+  margin-top:5px;
+  color:#ddd;
+  font-size:13px;
+}
+.case-banner b{
+  font-size:34px;
+  font-weight:300;
+}
+.case-banner:hover{
+  background:var(--gold);
+  color:#111;
 }
 
-.center-menu{
-  min-height:150vh;
-  padding:120px 6vw 80px;
-  background:#f7f5f0;
+.practice-list{
+  min-height:180vh;
+  padding:118px 6vw 90px;
+  background:var(--cream);
 }
 
-.center-item{
+.practice-item{
   width:100%;
   display:grid;
-  grid-template-columns:80px 1fr 42px;
-  align-items:center;
-  gap:20px;
-  padding:32px 0;
+  grid-template-columns:74px 1fr 34px;
+  gap:18px;
+  align-items:start;
+  padding:28px 0;
   border:0;
   border-bottom:1px solid rgba(0,0,0,.12);
   background:transparent;
@@ -863,188 +165,347 @@ img{display:block;width:100%}
   transition:.35s;
 }
 
-.center-item span{
+.practice-item span{
   color:#aaa;
-  font-size:34px;
+  font-size:32px;
 }
 
-.center-item strong{
+.practice-item strong{
   display:block;
-  color:#111;
-  font-size:clamp(38px,4vw,62px);
+  font-size:clamp(34px,3.4vw,56px);
   font-weight:400;
   letter-spacing:-2px;
 }
 
-.center-item em{
+.practice-item em{
   display:block;
-  margin-top:10px;
+  margin-top:8px;
   color:#777;
   font-style:normal;
-  font-size:13px;
-  letter-spacing:3px;
+  font-size:12px;
+  letter-spacing:2px;
 }
 
-.center-item b{
+.practice-item p{
+  margin:12px 0 0;
+  color:#555;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.practice-item b{
   color:#999;
-  font-size:34px;
+  font-size:30px;
   font-weight:300;
 }
 
-.center-item.active{
-  padding-left:28px;
-  border-left:6px solid #b89458;
+.practice-item.active,
+.practice-item:hover{
+  padding-left:24px;
+  border-left:5px solid var(--gold);
 }
 
-.center-item.active span,
-.center-item.active strong{
-  color:#b89458;
+.practice-item.active span,
+.practice-item.active strong{
+  color:var(--gold);
 }
 
-.center-item:hover{
-  padding-left:28px;
+/* 변호인단 */
+.lawyers{
+  background:#0b0b0b;
+  color:#fff;
+  padding:110px 0 120px;
+}
+
+.section-head{
+  text-align:center;
+  padding:0 24px 54px;
+}
+
+.section-head span{
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.section-head h2{
+  margin:24px 0;
+  font-size:clamp(42px,6vw,82px);
+  font-weight:400;
+}
+
+.section-head p{
+  color:#ccc;
+  font-size:19px;
+  line-height:1.8;
+}
+
+.section-head strong{
+  color:#fff;
+}
+
+.lawyer-track{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:0 6vw 18px;
+}
+
+.lawyer-track::-webkit-scrollbar{display:none}
+
+.lawyer-track article{
+  min-width:310px;
+  height:560px;
+  scroll-snap-align:center;
+  position:relative;
+  padding:22px;
+  overflow:hidden;
+  border:1px solid rgba(184,148,88,.28);
+  background:#151515;
+}
+
+.lawyer-track article img{
+  height:280px;
+  object-fit:cover;
+  object-position:top center;
+  filter:brightness(.9);
+  margin:-22px -22px 22px;
+  width:calc(100% + 44px);
+}
+
+.lawyer-track small{
+  color:var(--gold);
+}
+
+.lawyer-track h3{
+  margin:10px 0;
+  font-size:34px;
+}
+
+.lawyer-track p{
+  color:#ccc;
+  line-height:1.6;
+}
+
+.lawyer-track ul{
+  padding-left:18px;
+  color:#aaa;
+  line-height:1.8;
+}
+
+/* 상담 */
+.contact{
+  background:var(--cream);
+  padding:100px 6vw;
+}
+
+.contact h2{
+  margin:0 0 16px;
+  font-size:clamp(42px,6vw,76px);
+  font-weight:400;
+}
+
+.contact p{
+  font-size:22px;
+  color:#555;
+}
+
+.contact-grid{
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.contact-grid a{
+  padding:28px;
+  border:1px solid rgba(0,0,0,.18);
+  font-weight:800;
+  font-size:18px;
+}
+
+/* 지도 */
+.location{
+  display:grid;
+  grid-template-columns:32% 68%;
+  min-height:430px;
+  background:#eee;
+}
+
+.location>div:first-child{
+  padding:70px 6vw;
+}
+
+.location h2{
+  font-size:42px;
+  font-weight:400;
+}
+
+.location p{
+  line-height:1.8;
+  color:#444;
+}
+
+.location a{
+  display:inline-block;
+  margin-top:26px;
+  padding:14px 22px;
+  border:1px solid #111;
+}
+
+.map{
+  background:
+    linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)),
+    url("assets/map.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.map span{
+  padding:18px 28px;
+  border-radius:40px;
+  background:#111;
+  color:#fff;
+}
+
+/* 오른쪽 세로 배너 */
+.quick-banner{
+  position:fixed;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1001;
+  display:flex;
+  flex-direction:column;
+}
+.quick-banner a{
+  width:76px;
+  height:76px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  border:1px solid rgba(255,255,255,.25);
+  background:#111;
+  color:#fff;
+  font-size:18px;
+}
+.quick-banner span{
+  font-size:11px;
 }
 
 /* 모바일 */
 @media(max-width:900px){
-  .center-fixed{
+  .header{
+    height:70px;
+    padding:0 18px;
+    color:#111;
+    background:rgba(247,245,240,.88);
+    mix-blend-mode:normal;
+  }
+  .header nav{display:none}
+  .logo{font-size:18px}
+
+  .practice-section{
     display:block;
   }
 
-  .center-visual{
+  .practice-visual{
     position:sticky;
-    top:0;
-    height:60vh;
+    top:70px;
+    height:62vh;
     z-index:1;
   }
 
-  .center-overlay{
-    left:26px;
-    right:26px;
-    bottom:34px;
+  .practice-copy{
+    left:24px;
+    right:24px;
+    bottom:24%;
   }
 
-  .center-overlay h1{
-    font-size:38px;
+  .practice-copy h1{
+    font-size:36px;
     letter-spacing:-2px;
   }
 
-  .center-overlay p{
-    font-size:15px;
+  .practice-copy p{
+    font-size:14px;
   }
 
   .case-banner{
-    margin-top:22px;
+    left:24px;
+    right:24px;
+    bottom:22px;
     padding:16px 18px;
-    font-size:15px;
   }
 
-  .center-menu{
+  .case-banner strong{
+    font-size:16px;
+  }
+
+  .case-banner span{
+    font-size:11px;
+  }
+
+  .practice-list{
     position:relative;
     z-index:2;
     min-height:auto;
-    padding:44px 26px 70px;
+    padding:42px 24px 90px;
   }
 
-  .center-item{
-    grid-template-columns:48px 1fr 28px;
+  .practice-item{
+    grid-template-columns:48px 1fr 24px;
     gap:12px;
     padding:24px 0;
   }
 
-  .center-item span{
+  .practice-item span{
     font-size:24px;
   }
 
-  .center-item strong{
-    font-size:36px;
+  .practice-item strong{
+    font-size:32px;
   }
 
-  .center-item em{
+  .practice-item em{
     font-size:10px;
-    letter-spacing:2px;
   }
 
-  .center-item b{
-    font-size:30px;
-  }
-}
-/* 모바일 센터 최종: 그림 고정, 목록만 스크롤 */
-@media(max-width:900px){
-
-  .center-fixed{
-    display:block !important;
-    background:#f7f5f0 !important;
+  .practice-item p{
+    font-size:12px;
   }
 
-  .center-visual{
-    position:sticky !important;
-    top:70px !important;
-    height:58vh !important;
-    min-height:58vh !important;
-    z-index:1 !important;
-    overflow:hidden !important;
+  .lawyer-track article{
+    min-width:78vw;
   }
 
-  .center-visual img{
-    position:absolute !important;
-    inset:0 !important;
-    width:100% !important;
-    height:100% !important;
-    object-fit:cover !important;
+  .contact-grid{
+    grid-template-columns:1fr;
   }
 
-  .center-overlay{
-    position:absolute !important;
-    left:24px !important;
-    right:24px !important;
-    bottom:26px !important;
-    z-index:3 !important;
+  .location{
+    grid-template-columns:1fr;
   }
 
-  .center-overlay h1{
-    font-size:34px !important;
-    line-height:1.12 !important;
-    letter-spacing:-2px !important;
+  .map{
+    min-height:280px;
   }
 
-  .center-overlay p{
-    font-size:14px !important;
+  .quick-banner{
+    right:8px;
   }
 
-  .case-banner{
-    padding:16px 18px !important;
-    font-size:15px !important;
+  .quick-banner a{
+    width:58px;
+    height:58px;
   }
 
-  .center-menu{
-    position:relative !important;
-    z-index:2 !important;
-    background:#f7f5f0 !important;
-    min-height:auto !important;
-    padding:42px 24px 90px !important;
-  }
-
-  .center-item{
-    grid-template-columns:48px 1fr 28px !important;
-    gap:12px !important;
-    padding:24px 0 !important;
-  }
-
-  .center-item span{
-    font-size:24px !important;
-  }
-
-  .center-item strong{
-    font-size:36px !important;
-  }
-
-  .center-item em{
-    font-size:10px !important;
-    letter-spacing:2px !important;
-  }
-
-  .center-item b{
-    font-size:30px !important;
+  .quick-banner span{
+    display:none;
   }
 }
