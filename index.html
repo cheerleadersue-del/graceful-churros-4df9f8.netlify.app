@@ -16,6 +16,7 @@
   </div>
 
   <nav>
+    <a href="#hero">HOME</a>
     <a href="#practice">전문센터</a>
     <a href="#lawyers">변호인단</a>
     <a href="#contact">상담안내</a>
@@ -25,105 +26,72 @@
   <button class="menu">☰</button>
 </header>
 
+<section class="hero" id="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="assets/hero-building.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-shade"></div>
+
+  <div class="hero-text">
+    <p>LAW FIRM YUIL</p>
+    <h1>증거주의<br>수사중심</h1>
+    <h2>법무법인 유일</h2>
+    <span>
+      의뢰인이 미처 보지 못한 증거까지.<br>
+      새로운 관점으로 사건을 다시 설계합니다.
+    </span>
+  </div>
+</section>
+
 <section class="practice-section" id="practice">
 
   <div class="practice-visual">
-    <img id="practiceImage" src="assets/center-sexcrime.png" alt="전문센터 이미지">
+    <img id="practiceImage" src="assets/center-sexcrime.png" alt="성범죄센터">
 
     <div class="practice-copy">
-      <h1 id="practiceTitle">성범죄<br>센터</h1>
-      <p class="gold">증거주의 · 수사중심</p>
-      <p id="practiceDesc">
-        강간 · 준강간 · 강제추행 · 통매음 · 아청법 · 성매매 · 딥페이크 · 무고죄
-      </p>
+      <h2 id="practiceTitle">성범죄<br>센터</h2>
+      <p>증거주의 · 수사중심</p>
     </div>
 
-    <a href="cases.html" class="case-banner">
-      <strong>성공사례 보기</strong>
-      <span>→</span>
-    </a>
+    <div class="case-panel">
+      <p id="practiceKeywords">강간 · 준강간 · 강제추행 · 통매음 · 아청법 · 성매매 · 딥페이크 · 무고죄</p>
+      <a href="cases.html">성공사례 보기 <span>→</span></a>
+    </div>
   </div>
 
   <div class="practice-list">
 
-    <button class="practice-item active" data-img="assets/center-sexcrime.png" data-title="성범죄<br>센터" data-desc="강간 · 준강간 · 강제추행 · 통매음 · 아청법 · 성매매 · 딥페이크 · 무고죄">
-      <span>01</span>
-      <div>
-        <strong>성범죄 센터</strong>
-        <em>SEX CRIME DEFENSE</em>
-        <p>강간 · 준강간 · 강제추행 · 통매음 · 아청법 · 성매매 · 딥페이크 · 무고죄</p>
-      </div>
-      <b>→</b>
+    <button class="practice-item active" data-img="assets/center-sexcrime.png" data-title="성범죄<br>센터" data-keywords="강간 · 준강간 · 강제추행 · 통매음 · 아청법 · 성매매 · 딥페이크 · 무고죄">
+      <span>01</span><div><strong>성범죄 센터</strong><em>SEX CRIME CENTER</em></div><b>→</b>
     </button>
 
-    <button class="practice-item" data-img="assets/center-criminal.png" data-title="형사<br>센터" data-desc="상해 · 특수폭행 · 마약 · 배임 · 횡령 · 코인OTC · 범죄수익은닉 · 불송치 · 구속영장실질심사">
-      <span>02</span>
-      <div>
-        <strong>형사 센터</strong>
-        <em>CRIMINAL DEFENSE</em>
-        <p>상해 · 특수폭행 · 마약 · 배임 · 횡령 · 코인OTC · 범죄수익은닉 · 불송치 · 구속영장실질심사</p>
-      </div>
-      <b>→</b>
+    <button class="practice-item" data-img="assets/center-criminal.png" data-title="형사<br>센터" data-keywords="상해 · 특수폭행 · 마약 · 배임 · 횡령 · 코인OTC · 범죄수익은닉 · 불송치 · 구속영장실질심사">
+      <span>02</span><div><strong>형사 센터</strong><em>CRIMINAL DEFENSE</em></div><b>→</b>
     </button>
 
-    <button class="practice-item" data-img="assets/center-school.png" data-title="학교폭력<br>센터" data-desc="학폭위 · 소년재판 · 청소년성범죄 · 피해학생 보호 · 가해학생 방어">
-      <span>03</span>
-      <div>
-        <strong>학교폭력 센터</strong>
-        <em>SCHOOL VIOLENCE</em>
-        <p>학폭위 · 소년재판 · 청소년성범죄 · 피해학생 보호 · 가해학생 방어</p>
-      </div>
-      <b>→</b>
+    <button class="practice-item" data-img="assets/center-school.png" data-title="학교폭력<br>센터" data-keywords="학폭위 · 소년재판 · 청소년성범죄 · 피해학생 보호 · 가해학생 방어">
+      <span>03</span><div><strong>학교폭력 센터</strong><em>SCHOOL VIOLENCE</em></div><b>→</b>
     </button>
 
-    <button class="practice-item" data-img="assets/center-medical.png" data-title="의료사고<br>센터" data-desc="업무상과실치사상 · 설명의무위반 · 의무기록위조 · 의료법위반">
-      <span>04</span>
-      <div>
-        <strong>의료사고 센터</strong>
-        <em>MEDICAL DISPUTE</em>
-        <p>업무상과실치사상 · 설명의무위반 · 의무기록위조 · 의료법위반</p>
-      </div>
-      <b>→</b>
+    <button class="practice-item" data-img="assets/center-medical.png" data-title="의료사고<br>센터" data-keywords="업무상과실치사상 · 설명의무위반 · 의무기록위조 · 의료법위반">
+      <span>04</span><div><strong>의료사고 센터</strong><em>MEDICAL DISPUTE</em></div><b>→</b>
     </button>
 
-    <button class="practice-item" data-img="assets/center-infection.png" data-title="감염분쟁<br>센터" data-desc="헤르페스 · 곤지름(HPV) · 에이즈 · 병원감염 · 감염 경위 분석">
-      <span>05</span>
-      <div>
-        <strong>감염분쟁 센터</strong>
-        <em>INFECTION DISPUTE</em>
-        <p>헤르페스 · 곤지름(HPV) · 에이즈 · 병원감염 · 감염 경위 분석</p>
-      </div>
-      <b>→</b>
+    <button class="practice-item" data-img="assets/center-infection.png" data-title="감염분쟁<br>센터" data-keywords="헤르페스 · 곤지름(HPV) · 에이즈 · 병원감염 · 감염 경위 분석">
+      <span>05</span><div><strong>감염분쟁 센터</strong><em>INFECTION DISPUTE</em></div><b>→</b>
     </button>
 
-    <button class="practice-item" data-img="assets/center-bankruptcy.png" data-title="회생·파산<br>센터" data-desc="개인회생 · 파산 · 채무조정 · 신용불량 · 압류해제 · 채권추심 대응">
-      <span>06</span>
-      <div>
-        <strong>회생·파산 센터</strong>
-        <em>REHABILITATION · BANKRUPTCY</em>
-        <p>개인회생 · 파산 · 채무조정 · 신용불량 · 압류해제 · 채권추심 대응</p>
-      </div>
-      <b>→</b>
+    <button class="practice-item" data-img="assets/center-bankruptcy.png" data-title="회생·파산<br>센터" data-keywords="개인회생 · 파산 · 채무조정 · 신용불량 · 압류해제 · 채권추심 대응">
+      <span>06</span><div><strong>회생·파산 센터</strong><em>REHABILITATION · BANKRUPTCY</em></div><b>→</b>
     </button>
 
-    <button class="practice-item" data-img="assets/center-traffic.png" data-title="교통사고<br>센터" data-desc="음주운전 · 뺑소니 · 12대 중과실 · 형사합의 · 보험분쟁 · 손해배상">
-      <span>07</span>
-      <div>
-        <strong>교통사고 센터</strong>
-        <em>TRAFFIC ACCIDENT</em>
-        <p>음주운전 · 뺑소니 · 12대 중과실 · 형사합의 · 보험분쟁 · 손해배상</p>
-      </div>
-      <b>→</b>
+    <button class="practice-item" data-img="assets/center-traffic.png" data-title="교통사고<br>센터" data-keywords="음주운전 · 뺑소니 · 12대 중과실 · 형사합의 · 보험분쟁 · 손해배상">
+      <span>07</span><div><strong>교통사고 센터</strong><em>TRAFFIC ACCIDENT</em></div><b>→</b>
     </button>
 
-    <button class="practice-item" data-img="assets/center-family.png" data-title="이혼·상속<br>센터" data-desc="이혼소송 · 재산분할 · 위자료 · 양육권 · 상속분쟁 · 유류분 · 상속포기">
-      <span>08</span>
-      <div>
-        <strong>이혼·상속 센터</strong>
-        <em>FAMILY LAW</em>
-        <p>이혼소송 · 재산분할 · 위자료 · 양육권 · 상속분쟁 · 유류분 · 상속포기</p>
-      </div>
-      <b>→</b>
+    <button class="practice-item" data-img="assets/center-family.png" data-title="이혼·상속<br>센터" data-keywords="이혼소송 · 재산분할 · 위자료 · 양육권 · 상속분쟁 · 유류분 · 상속포기">
+      <span>08</span><div><strong>이혼·상속 센터</strong><em>FAMILY LAW</em></div><b>→</b>
     </button>
 
   </div>
@@ -146,11 +114,7 @@
       <small>대표변호사</small>
       <h3>정호길</h3>
       <p>25년 경력 형사전문</p>
-      <ul>
-        <li>대표 사건 총괄</li>
-        <li>수사 대응 로드맵 설계</li>
-        <li>증거와 진술 흐름 분석</li>
-      </ul>
+      <ul><li>대표 사건 총괄</li><li>증거와 진술 흐름 분석</li><li>수사 대응 로드맵 설계</li></ul>
     </article>
 
     <article>
@@ -158,11 +122,7 @@
       <small>변호사</small>
       <h3>김제도</h3>
       <p>형사사건 대응</p>
-      <ul>
-        <li>초기 진술 전략</li>
-        <li>조사 대응 설계</li>
-        <li>증거자료 검토</li>
-      </ul>
+      <ul><li>초기 진술 전략</li><li>조사 대응 설계</li><li>증거자료 검토</li></ul>
     </article>
 
     <article>
@@ -170,11 +130,7 @@
       <small>변호사</small>
       <h3>정주형</h3>
       <p>수사 대응</p>
-      <ul>
-        <li>기록 분석</li>
-        <li>고소·피고소 검토</li>
-        <li>방어 포인트 정리</li>
-      </ul>
+      <ul><li>기록 분석</li><li>고소·피고소 검토</li><li>방어 포인트 정리</li></ul>
     </article>
 
     <article>
@@ -182,11 +138,7 @@
       <small>변호사</small>
       <h3>김의환</h3>
       <p>증거 분석</p>
-      <ul>
-        <li>사실관계 구조화</li>
-        <li>증거 흐름 분석</li>
-        <li>법리 검토</li>
-      </ul>
+      <ul><li>사실관계 구조화</li><li>증거 흐름 분석</li><li>법리 검토</li></ul>
     </article>
 
     <article>
@@ -194,11 +146,7 @@
       <small>변호사</small>
       <h3>이경숙</h3>
       <p>사건 관리</p>
-      <ul>
-        <li>의뢰인 상황 분석</li>
-        <li>분쟁 해결 방향 설계</li>
-        <li>안정적인 사건 진행</li>
-      </ul>
+      <ul><li>의뢰인 상황 분석</li><li>분쟁 해결 방향 설계</li><li>안정적인 사건 진행</li></ul>
     </article>
   </div>
 </section>
@@ -208,9 +156,9 @@
   <p>빠른 상담이 해결의 시작입니다.</p>
 
   <div class="contact-grid">
-    <a href="tel:01000000000">☎ 전화 상담</a>
-    <a href="#">💬 카톡 상담</a>
-    <a href="#">📅 상담 예약</a>
+    <a href="tel:01000000000">전화 상담</a>
+    <a href="#">카톡 상담</a>
+    <a href="#">상담 예약</a>
   </div>
 </section>
 
@@ -220,16 +168,13 @@
     <p>서울특별시 서초구 서초대로 123<br>법무법인 유일</p>
     <a href="#">지도 자세히 보기 →</a>
   </div>
-
-  <div class="map">
-    <span>LAW FIRM YUIL</span>
-  </div>
+  <div class="map"><span>LAW FIRM YUIL</span></div>
 </section>
 
 <aside class="quick-banner">
-  <a href="#">💬<span>카톡상담</span></a>
-  <a href="tel:01000000000">☎<span>전화상담</span></a>
-  <a href="#">📅<span>상담예약</span></a>
+  <a href="#">💬<span>카톡</span></a>
+  <a href="tel:01000000000">☎<span>전화</span></a>
+  <a href="#">□<span>예약</span></a>
 </aside>
 
 <script src="script.js"></script>
