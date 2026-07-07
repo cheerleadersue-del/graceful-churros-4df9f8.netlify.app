@@ -1,58 +1,30 @@
-/* 센터 이미지 변경 */
-const centerItems = document.querySelectorAll(".center-item");
-const centerImage = document.getElementById("centerImage");
+const practiceItems = document.querySelectorAll(".practice-item");
+const practiceImage = document.getElementById("practiceImage");
+const practiceTitle = document.getElementById("practiceTitle");
+const practiceDesc = document.getElementById("practiceDesc");
+const caseText = document.getElementById("caseText");
 
-if (centerItems.length && centerImage) {
-  centerItems.forEach(item => {
-    item.addEventListener("click", () => {
-      const newImg = item.dataset.img;
+practiceItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const img = item.dataset.img;
+    const title = item.dataset.title;
+    const desc = item.dataset.desc;
+    const caseLabel = item.dataset.case;
 
-      centerItems.forEach(i => i.classList.remove("active"));
-      item.classList.add("active");
+    practiceItems.forEach(i => i.classList.remove("active"));
+    item.classList.add("active");
 
-      centerImage.style.opacity = "0";
-      centerImage.style.transform = "scale(1.06)";
+    practiceImage.style.opacity = "0";
+    practiceImage.style.transform = "scale(1.06)";
 
-      setTimeout(() => {
-        centerImage.src = newImg;
-        centerImage.style.opacity = "1";
-        centerImage.style.transform = "scale(1.02)";
-      }, 250);
-    });
+    setTimeout(() => {
+      practiceImage.src = img;
+      practiceTitle.innerHTML = title.replace("센터", "<br>센터");
+      practiceDesc.innerHTML = desc;
+      caseText.textContent = caseLabel;
+
+      practiceImage.style.opacity = "1";
+      practiceImage.style.transform = "scale(1.02)";
+    }, 260);
   });
-}
-
-/* 변호인단 프로필 변경 */
-const lawyerButtons = document.querySelectorAll(".lawyer-nav button");
-const lawyerPhoto = document.getElementById("lawyerPhoto");
-const lawyerName = document.getElementById("lawyerName");
-const lawyerRole = document.getElementById("lawyerRole");
-const lawyerCareer = document.getElementById("lawyerCareer");
-
-if (lawyerButtons.length && lawyerPhoto) {
-  lawyerButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      lawyerButtons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      lawyerPhoto.style.opacity = "0";
-      lawyerPhoto.style.transform = "scale(1.05)";
-
-      setTimeout(() => {
-        lawyerPhoto.src = button.dataset.img;
-        lawyerName.textContent = button.dataset.name;
-        lawyerRole.textContent = button.dataset.role;
-
-        lawyerCareer.innerHTML = "";
-        button.dataset.career.split("|").forEach(text => {
-          const li = document.createElement("li");
-          li.textContent = text;
-          lawyerCareer.appendChild(li);
-        });
-
-        lawyerPhoto.style.opacity = "1";
-        lawyerPhoto.style.transform = "scale(1)";
-      }, 280);
-    });
-  });
-}
+});
