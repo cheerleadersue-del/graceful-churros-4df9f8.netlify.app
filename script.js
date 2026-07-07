@@ -1,13 +1,13 @@
 const practiceItems = document.querySelectorAll(".practice-item");
 const practiceImage = document.getElementById("practiceImage");
 const practiceTitle = document.getElementById("practiceTitle");
-const practiceDesc = document.getElementById("practiceDesc");
+const practiceKeywords = document.getElementById("practiceKeywords");
 
 practiceItems.forEach(item => {
   item.addEventListener("click", () => {
     const img = item.dataset.img;
     const title = item.dataset.title;
-    const desc = item.dataset.desc;
+    const keywords = item.dataset.keywords;
 
     practiceItems.forEach(i => i.classList.remove("active"));
     item.classList.add("active");
@@ -18,7 +18,7 @@ practiceItems.forEach(item => {
     setTimeout(() => {
       practiceImage.src = img;
       practiceTitle.innerHTML = title;
-      practiceDesc.textContent = desc;
+      practiceKeywords.textContent = keywords;
 
       practiceImage.style.opacity = "1";
       practiceImage.style.transform = "scale(1.02)";
