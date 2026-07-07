@@ -33,17 +33,20 @@ img{display:block;width:100%}
   font-weight:800;
   font-size:22px;
 }
+
 .logo span{
   display:block;
   font-size:11px;
   letter-spacing:2px;
   margin-top:4px;
 }
+
 .header nav{
   display:flex;
   gap:38px;
   font-size:13px;
 }
+
 .menu{
   width:54px;
   height:54px;
@@ -67,6 +70,7 @@ img{display:block;width:100%}
   height:100vh;
   overflow:hidden;
   background:#111;
+  z-index:5;
 }
 
 .practice-visual img{
@@ -82,13 +86,13 @@ img{display:block;width:100%}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.06),rgba(0,0,0,.58));
+  background:linear-gradient(to bottom,rgba(0,0,0,.08),rgba(0,0,0,.58));
 }
 
 .practice-copy{
   position:absolute;
   left:7%;
-  bottom:20%;
+  bottom:24%;
   z-index:2;
   color:#fff;
   max-width:660px;
@@ -99,7 +103,7 @@ img{display:block;width:100%}
   font-size:clamp(54px,6vw,98px);
   line-height:1.05;
   letter-spacing:-4px;
-  font-weight:500;
+  font-weight:700;
 }
 
 .practice-copy p{
@@ -107,47 +111,48 @@ img{display:block;width:100%}
   line-height:1.7;
 }
 
-.gold{color:var(--gold);font-weight:800}
+.gold{
+  color:var(--gold);
+  font-weight:800;
+}
 
 .case-banner{
   position:absolute;
   left:7%;
-  right:7%;
+  right:110px;
   bottom:6%;
-  z-index:3;
+  z-index:4;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:22px 26px;
-  border:1px solid rgba(255,255,255,.55);
-  background:rgba(0,0,0,.34);
+  border:1px solid rgba(255,255,255,.65);
+  background:rgba(0,0,0,.35);
   backdrop-filter:blur(16px);
   color:#fff;
   transition:.3s;
 }
+
 .case-banner strong{
-  display:block;
-  font-size:20px;
+  font-size:22px;
 }
+
 .case-banner span{
-  display:block;
-  margin-top:5px;
-  color:#ddd;
-  font-size:13px;
-}
-.case-banner b{
   font-size:34px;
   font-weight:300;
 }
+
 .case-banner:hover{
   background:var(--gold);
   color:#111;
 }
 
 .practice-list{
-  min-height:180vh;
+  min-height:190vh;
   padding:118px 6vw 90px;
   background:var(--cream);
+  position:relative;
+  z-index:1;
 }
 
 .practice-item{
@@ -173,7 +178,7 @@ img{display:block;width:100%}
 .practice-item strong{
   display:block;
   font-size:clamp(34px,3.4vw,56px);
-  font-weight:400;
+  font-weight:500;
   letter-spacing:-2px;
 }
 
@@ -239,10 +244,6 @@ img{display:block;width:100%}
   color:#ccc;
   font-size:19px;
   line-height:1.8;
-}
-
-.section-head strong{
-  color:#fff;
 }
 
 .lawyer-track{
@@ -381,6 +382,7 @@ img{display:block;width:100%}
   display:flex;
   flex-direction:column;
 }
+
 .quick-banner a{
   width:76px;
   height:76px;
@@ -394,6 +396,7 @@ img{display:block;width:100%}
   color:#fff;
   font-size:18px;
 }
+
 .quick-banner span{
   font-size:11px;
 }
@@ -404,31 +407,39 @@ img{display:block;width:100%}
     height:70px;
     padding:0 18px;
     color:#111;
-    background:rgba(247,245,240,.88);
+    background:rgba(247,245,240,.9);
     mix-blend-mode:normal;
   }
-  .header nav{display:none}
-  .logo{font-size:18px}
+
+  .header nav{
+    display:none;
+  }
+
+  .logo{
+    font-size:18px;
+  }
 
   .practice-section{
     display:block;
+    background:var(--cream);
   }
 
   .practice-visual{
     position:sticky;
     top:70px;
     height:62vh;
-    z-index:1;
+    z-index:5;
   }
 
   .practice-copy{
     left:24px;
     right:24px;
-    bottom:24%;
+    bottom:25%;
   }
 
   .practice-copy h1{
     font-size:36px;
+    line-height:1.1;
     letter-spacing:-2px;
   }
 
@@ -438,7 +449,7 @@ img{display:block;width:100%}
 
   .case-banner{
     left:24px;
-    right:24px;
+    right:96px;
     bottom:22px;
     padding:16px 18px;
   }
@@ -448,14 +459,16 @@ img{display:block;width:100%}
   }
 
   .case-banner span{
-    font-size:11px;
+    font-size:28px;
   }
 
   .practice-list{
     position:relative;
-    z-index:2;
+    z-index:1;
+    margin-top:0;
     min-height:auto;
     padding:42px 24px 90px;
+    background:var(--cream);
   }
 
   .practice-item{
@@ -498,6 +511,7 @@ img{display:block;width:100%}
 
   .quick-banner{
     right:8px;
+    top:46%;
   }
 
   .quick-banner a{
