@@ -1,18 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
   /* =========================
-     1. HEADER SCROLL
-  ========================== */
+     HEADER
+  ========================= */
+
   const header = document.getElementById("header");
 
   window.addEventListener("scroll", () => {
-    if (!header) return;
-    header.classList.toggle("scrolled", window.scrollY > 20);
+    header?.classList.toggle("scrolled", window.scrollY > 20);
   });
 
   /* =========================
-     2. LAWYER COVERFLOW
-  ========================== */
+     변호사 카드
+  ========================= */
+
   const cards = [...document.querySelectorAll(".lawyer-card")];
+
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
   const dotsContainer = document.getElementById("dots");
@@ -26,9 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeIndex = 0;
 
   /*
-    실제 변호사 정보로 아래 내용만 교체하세요.
-    카드 순서와 profiles 배열 순서는 반드시 같아야 합니다.
+    index.html의 변호사 카드 순서와
+    아래 profiles 순서를 동일하게 유지해야 합니다.
   */
+
   const profiles = [
     {
       role: "대표변호사",
@@ -43,12 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "다수 형사재판 및 항소심 수행"
       ]
     },
+
     {
-      role: "파트너변호사",
+      role: "변호사",
       name: "김제도",
       field: "형사 · 기업분쟁",
       career: [
-        "법무법인 유일 파트너변호사",
+        "법무법인 유일 변호사",
         "경제범죄 및 재산범죄 사건 수행",
         "사기·횡령·배임 사건 변론",
         "기업 관련 형사·민사 분쟁 담당",
@@ -56,25 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "금융·계좌자료 분석 및 증거 검토"
       ]
     },
-    {
-      role: "파트너변호사",
-      name: "이경숙",
-      field: "가사 · 민사",
-      career: [
-        "법무법인 유일 파트너변호사",
-        "이혼·재산분할 사건 수행",
-        "상속·유류분 분쟁 담당",
-        "양육권·친권 사건 수행",
-        "민사 손해배상 사건 대리",
-        "가사조정 및 협상 사건 수행"
-      ]
-    },
+
     {
       role: "변호사",
-      name: "정주희",
+      name: "정주현",
       field: "민사 · 손해배상",
       career: [
-        "법무법인 유일 소속변호사",
+        "법무법인 유일 변호사",
         "민사 및 손해배상 사건 수행",
         "부동산·임대차 분쟁 담당",
         "계약금·대금 청구 사건 대리",
@@ -82,12 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "사실조회·문서제출명령 절차 수행"
       ]
     },
+
     {
       role: "변호사",
-      name: "심상현",
+      name: "심상한",
       field: "회생 · 기업법무",
       career: [
-        "법무법인 유일 소속변호사",
+        "법무법인 유일 변호사",
         "개인회생·파산 사건 수행",
         "법인회생 및 채무조정 업무",
         "채권자 대응 및 재산관계 분석",
@@ -95,6 +88,21 @@ document.addEventListener("DOMContentLoaded", () => {
         "기업 법률자문 및 계약 검토"
       ]
     },
+
+    {
+      role: "변호사",
+      name: "이경숙",
+      field: "가사 · 민사",
+      career: [
+        "법무법인 유일 변호사",
+        "이혼·재산분할 사건 수행",
+        "상속·유류분 분쟁 담당",
+        "양육권·친권 사건 수행",
+        "민사 손해배상 사건 대리",
+        "가사조정 및 협상 사건 수행"
+      ]
+    },
+
     {
       role: "파트너변호사",
       name: "성명 입력",
@@ -110,17 +118,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  function createDots() {
-    if (!dotsContainer || !cards.length) return;
+  /* 하단 점 만들기 */
 
-    dotsContainer.innerHTML = "";
-
+  if (dotsContainer && cards.length > 0) {
     cards.forEach((_, index) => {
       const dot = document.createElement("button");
 
       dot.type = "button";
       dot.className = "dot";
-      dot.setAttribute("aria-label", `${index + 1}번째 변호사 보기`);
+      dot.setAttribute(
+        "aria-label",
+        `${index + 1}번째 변호사 보기`
+      );
 
       dot.addEventListener("click", () => {
         activeIndex = index;
@@ -131,7 +140,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function getShortestOffset(index) {
+  const dots = dotsContainer
+    ? [...dotsContainer.children]
+    : [];
+
+  /*
+    현재 카드와 다른 카드 사이의 거리를 계산합니다.
+    마지막 카드 다음에 첫 카드가 자연스럽게 연결됩니다.
+  */
+
+  function getCardOffset(index) {
     let difference = index - activeIndex;
 
     if (difference > cards.length / 2) {
@@ -145,10 +163,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return difference;
   }
 
-  function updateCareer() {
-    if (!careerSection || !profiles[activeIndex]) return;
+  /* 선택된 변호사의 주요 경력 변경 */
 
+  function updateCareer() {
     const profile = profiles[activeIndex];
+
+    if (!profile || !careerSection) {
+      return;
+    }
 
     careerSection.classList.add("changing");
 
@@ -167,7 +189,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (careerList) {
         careerList.innerHTML = profile.career
-          .map((item) => `<li>${item}</li>`)
+          .map((careerItem) => {
+            return `<li>${careerItem}</li>`;
+          })
           .join("");
       }
 
@@ -175,64 +199,114 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 140);
   }
 
+  /* 변호사 카드 위치 변경 */
+
   function renderLawyers() {
-    if (!cards.length) return;
+    if (cards.length === 0) {
+      return;
+    }
 
     const isMobile = window.innerWidth <= 640;
     const isTablet = window.innerWidth <= 900;
 
-    const horizontalStep = isMobile ? 112 : isTablet ? 185 : 225;
+    const horizontalStep = isMobile
+      ? 112
+      : isTablet
+        ? 185
+        : 225;
 
     cards.forEach((card, index) => {
-      const offset = getShortestOffset(index);
+      const offset = getCardOffset(index);
       const distance = Math.abs(offset);
 
       const translateX = offset * horizontalStep;
+
       const translateZ =
-        distance === 0 ? 130 :
-        distance === 1 ? 15 :
-        -110;
+        distance === 0
+          ? 130
+          : distance === 1
+            ? 15
+            : -110;
 
       const rotateY =
-        offset === 0 ? 0 :
-        offset < 0 ? 7 :
-        -7;
+        offset === 0
+          ? 0
+          : offset < 0
+            ? 7
+            : -7;
 
       const scale =
-        distance === 0 ? 1 :
-        distance === 1 ? 0.86 :
-        0.76;
+        distance === 0
+          ? 1
+          : distance === 1
+            ? 0.86
+            : 0.76;
 
-      card.style.setProperty("--x", `${translateX}px`);
-      card.style.setProperty("--z", `${translateZ}px`);
-      card.style.setProperty("--r", `${rotateY}deg`);
-      card.style.setProperty("--s", scale);
+      card.style.setProperty(
+        "--x",
+        `${translateX}px`
+      );
+
+      card.style.setProperty(
+        "--z",
+        `${translateZ}px`
+      );
+
+      card.style.setProperty(
+        "--r",
+        `${rotateY}deg`
+      );
+
+      card.style.setProperty(
+        "--s",
+        scale
+      );
 
       card.style.zIndex = String(20 - distance);
-      card.style.opacity = distance > 2 ? "0" : "";
-      card.style.pointerEvents = distance > 2 ? "none" : "auto";
 
-      card.classList.toggle("active", index === activeIndex);
+      card.style.opacity =
+        distance > 2 ? "0" : "";
+
+      card.style.pointerEvents =
+        distance > 2 ? "none" : "auto";
+
+      card.classList.toggle(
+        "active",
+        index === activeIndex
+      );
     });
 
-    if (dotsContainer) {
-      [...dotsContainer.children].forEach((dot, index) => {
-        dot.classList.toggle("active", index === activeIndex);
-      });
-    }
+    dots.forEach((dot, index) => {
+      dot.classList.toggle(
+        "active",
+        index === activeIndex
+      );
+    });
 
     updateCareer();
   }
 
+  /* 이전 버튼 */
+
   prevButton?.addEventListener("click", () => {
-    activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+    activeIndex =
+      (activeIndex - 1 + cards.length) %
+      cards.length;
+
     renderLawyers();
   });
 
+  /* 다음 버튼 */
+
   nextButton?.addEventListener("click", () => {
-    activeIndex = (activeIndex + 1) % cards.length;
+    activeIndex =
+      (activeIndex + 1) %
+      cards.length;
+
     renderLawyers();
   });
+
+  /* 카드를 직접 클릭 */
 
   cards.forEach((card, index) => {
     card.addEventListener("click", () => {
@@ -241,18 +315,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  createDots();
+  window.addEventListener(
+    "resize",
+    renderLawyers
+  );
+
   renderLawyers();
 
-  window.addEventListener("resize", renderLawyers);
-
   /* =========================
-     3. PRACTICE CENTERS
-  ========================== */
-  const centerItems = [...document.querySelectorAll(".center-item")];
-  const centerImage = document.getElementById("centerImage");
-  const centerTitle = document.getElementById("centerTitle");
-  const centerEnglish = document.getElementById("centerEn");
+     전문센터
+  ========================= */
+
+  const centerItems = [
+    ...document.querySelectorAll(".center-item")
+  ];
+
+  const centerImage =
+    document.getElementById("centerImage");
+
+  const centerTitle =
+    document.getElementById("centerTitle");
+
+  const centerEnglish =
+    document.getElementById("centerEn");
 
   function changeCenter(item) {
     centerItems.forEach((centerItem) => {
@@ -261,59 +346,91 @@ document.addEventListener("DOMContentLoaded", () => {
 
     item.classList.add("active");
 
-    if (!centerImage) return;
+    if (!centerImage) {
+      return;
+    }
 
     centerImage.style.opacity = "0";
-    centerImage.style.transform = "scale(1.025)";
+    centerImage.style.transform =
+      "scale(1.025)";
 
     window.setTimeout(() => {
-      centerImage.src = item.dataset.image || "";
-      centerImage.alt = item.dataset.title || "전문센터 대표 이미지";
+      centerImage.src =
+        item.dataset.image || "";
+
+      centerImage.alt =
+        item.dataset.title || "전문센터";
 
       if (centerTitle) {
-        centerTitle.textContent = item.dataset.title || "";
+        centerTitle.textContent =
+          item.dataset.title || "";
       }
 
       if (centerEnglish) {
-        centerEnglish.textContent = item.dataset.en || "";
+        centerEnglish.textContent =
+          item.dataset.en || "";
       }
 
       centerImage.style.opacity = "1";
-      centerImage.style.transform = "scale(1)";
+      centerImage.style.transform =
+        "scale(1)";
     }, 180);
   }
 
   centerItems.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      changeCenter(item);
-    });
+    item.addEventListener(
+      "mouseenter",
+      () => {
+        changeCenter(item);
+      }
+    );
 
-    item.addEventListener("click", () => {
-      changeCenter(item);
-    });
+    item.addEventListener(
+      "click",
+      () => {
+        changeCenter(item);
+      }
+    );
   });
 
   /* =========================
-     4. SMOOTH ANCHOR LINKS
-  ========================== */
-  const anchorLinks = [...document.querySelectorAll('a[href^="#"]')];
+     내부 링크 부드러운 이동
+  ========================= */
+
+  const anchorLinks = [
+    ...document.querySelectorAll(
+      'a[href^="#"]'
+    )
+  ];
 
   anchorLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const targetId = link.getAttribute("href");
+    link.addEventListener(
+      "click",
+      (event) => {
+        const selector =
+          link.getAttribute("href");
 
-      if (!targetId || targetId === "#") return;
+        if (
+          !selector ||
+          selector === "#"
+        ) {
+          return;
+        }
 
-      const target = document.querySelector(targetId);
+        const target =
+          document.querySelector(selector);
 
-      if (!target) return;
+        if (!target) {
+          return;
+        }
 
-      event.preventDefault();
+        event.preventDefault();
 
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    });
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    );
   });
 });
