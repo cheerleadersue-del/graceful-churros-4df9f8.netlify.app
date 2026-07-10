@@ -1,182 +1,129 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>법무법인 유일 | 증거주의 수사중심</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#08090b">
+  <title>법무법인 유일 | 증거주의 수사·재판 대응</title>
+  <meta name="description" content="법무법인 유일은 증거와 기록을 중심으로 수사와 재판에 대응합니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-<header class="header">
-  <div class="logo">
-    법무법인 유일
-    <span>LAW FIRM YUIL</span>
-  </div>
-
-  <nav>
-    <a href="#hero">HOME</a>
-    <a href="#practice">전문센터</a>
-    <a href="#lawyers">변호인단</a>
-    <a href="#contact">상담안내</a>
-    <a href="#location">오시는 길</a>
-  </nav>
-
-  <button class="menu">☰</button>
-</header>
-
-<section class="hero" id="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="assets/hero-building.mp4" type="video/mp4">
-  </video>
-
-  <div class="hero-shade"></div>
-
-  <div class="hero-text">
-    <p>LAW FIRM YUIL</p>
-    <h1>증거주의<br>수사중심</h1>
-    <h2>법무법인 유일</h2>
-    <span>
-      의뢰인이 미처 보지 못한 증거까지.<br>
-      새로운 관점으로 사건을 다시 설계합니다.
-    </span>
-  </div>
-</section>
-
-<section class="practice-section" id="practice">
-
-  <div class="practice-visual">
-    <img id="practiceImage" src="assets/center-sexcrime.png" alt="성범죄센터">
-
-    <div class="practice-copy">
-      <h2 id="practiceTitle">성범죄<br>센터</h2>
-      <p>증거주의 · 수사중심</p>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="법무법인 유일 홈">
+        <span class="brand-symbol">Y</span>
+        <span class="brand-text"><strong>법무법인 유일</strong><small>LAW FIRM YUIL</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="주요 메뉴">
+        <a href="#lawyers">변호사</a>
+        <a href="#centers">전문센터</a>
+        <a href="#principle">유일의 원칙</a>
+        <a href="#contact">상담안내</a>
+      </nav>
+      <button class="menu-button" type="button" aria-label="메뉴 열기"><span></span></button>
     </div>
+  </header>
 
-    <div class="case-panel">
-      <p id="practiceKeywords">강간 · 준강간 · 강제추행 · 통매음 · 아청법 · 성매매 · 딥페이크 · 무고죄</p>
-      <a href="cases.html">성공사례 보기 <span>→</span></a>
+  <main id="top">
+    <section class="hero">
+      <img class="hero-image" src="assets/hero/building.jpg" alt="법무법인 유일이 위치한 건물">
+      <div class="hero-shade"></div>
+      <div class="container hero-content">
+        <p class="overline">LAW FIRM YUIL</p>
+        <h1><em>증거주의</em><span>수사 · 재판 대응</span></h1>
+        <p class="hero-copy">감정이 아닌 기록으로, 추측이 아닌 증거로 대응합니다.</p>
+        <a href="#lawyers" class="text-link">변호사 소개 <span>↓</span></a>
+      </div>
+    </section>
+
+    <section class="lawyers-section" id="lawyers">
+      <div class="container">
+        <div class="section-heading section-heading-light">
+          <div>
+            <p class="overline">LAWYERS OF YUIL</p>
+            <h2>사건은<br>한 사람이 해결하지 않습니다.</h2>
+          </div>
+          <p>각 분야의 변호사가 함께 사건을 검토하고 하나의 전략으로 대응합니다.</p>
+        </div>
+
+        <div class="lawyer-carousel" aria-label="변호사 소개">
+          <button class="carousel-arrow prev" id="lawyerPrev" aria-label="이전 변호사">←</button>
+          <div class="lawyer-stage" id="lawyerStage"></div>
+          <button class="carousel-arrow next" id="lawyerNext" aria-label="다음 변호사">→</button>
+          <div class="carousel-dots" id="lawyerDots" aria-label="변호사 선택"></div>
+        </div>
+
+        <div class="lawyer-career" id="lawyerCareer" aria-live="polite">
+          <div class="career-title">
+            <p id="careerRole">대표변호사</p>
+            <h3 id="careerName">정호길</h3>
+            <span id="careerField">형사 · 수사 및 재판 대응</span>
+          </div>
+          <div class="career-list-wrap">
+            <p>주요 경력</p>
+            <ul id="careerList"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="centers-section" id="centers">
+      <div class="container">
+        <div class="section-heading section-heading-dark">
+          <div>
+            <p class="overline">PRACTICE CENTERS</p>
+            <h2>분야별 전문센터</h2>
+          </div>
+          <p>사건의 성격에 따라 필요한 대응을 나누고 하나의 전략으로 연결합니다.</p>
+        </div>
+
+        <div class="centers-layout">
+          <div class="center-visual">
+            <img id="centerImage" src="assets/centers/criminal.png" alt="형사센터">
+            <div class="center-visual-caption">
+              <small id="centerEnglish">CRIMINAL DEFENSE CENTER</small>
+              <h3 id="centerTitle">형사센터</h3>
+            </div>
+          </div>
+          <div class="center-list" id="centerList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="principle-section" id="principle">
+      <div class="container principle-grid">
+        <div>
+          <p class="overline">YUIL PRINCIPLE</p>
+          <h2>말보다 기록,<br><em>주장보다 증거.</em></h2>
+        </div>
+        <div class="principles">
+          <article><span>01</span><h3>기록을 먼저 봅니다.</h3><p>진술, 문서, 영상과 객관적 자료를 사건 순서에 맞게 정리합니다.</p></article>
+          <article><span>02</span><h3>쟁점을 분명히 합니다.</h3><p>수사기관과 법원이 판단할 핵심 쟁점에 집중합니다.</p></article>
+          <article><span>03</span><h3>절차를 설계합니다.</h3><p>초기 대응부터 재판까지 일관된 방향으로 준비합니다.</p></article>
+          <article><span>04</span><h3>함께 검토합니다.</h3><p>분야별 변호사가 교차 검토해 놓치는 부분을 줄입니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-inner">
+        <div><p class="overline">CONSULTATION</p><h2>사건의 시작부터<br>함께하겠습니다.</h2></div>
+        <div class="contact-actions"><a href="tel:0000000000">전화 상담 <span>→</span></a><a href="#">카카오톡 상담 <span>→</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>법무법인 유일</strong><p>대표전화 0000-0000 · 주소 입력<br>광고책임변호사 입력 · 사업자등록번호 입력</p></div>
+      <p>© LAW FIRM YUIL. ALL RIGHTS RESERVED.</p>
     </div>
-  </div>
+  </footer>
 
-  <div class="practice-list">
-
-    <button class="practice-item active" data-img="assets/center-sexcrime.png" data-title="성범죄<br>센터" data-keywords="강간 · 준강간 · 강제추행 · 통매음 · 아청법 · 성매매 · 딥페이크 · 무고죄">
-      <span>01</span><div><strong>성범죄 센터</strong><em>SEX CRIME CENTER</em></div><b>→</b>
-    </button>
-
-    <button class="practice-item" data-img="assets/center-criminal.png" data-title="형사<br>센터" data-keywords="상해 · 특수폭행 · 마약 · 배임 · 횡령 · 코인OTC · 범죄수익은닉 · 불송치 · 구속영장실질심사">
-      <span>02</span><div><strong>형사 센터</strong><em>CRIMINAL DEFENSE</em></div><b>→</b>
-    </button>
-
-    <button class="practice-item" data-img="assets/center-school.png" data-title="학교폭력<br>센터" data-keywords="학폭위 · 소년재판 · 청소년성범죄 · 피해학생 보호 · 가해학생 방어">
-      <span>03</span><div><strong>학교폭력 센터</strong><em>SCHOOL VIOLENCE</em></div><b>→</b>
-    </button>
-
-    <button class="practice-item" data-img="assets/center-medical.png" data-title="의료사고<br>센터" data-keywords="업무상과실치사상 · 설명의무위반 · 의무기록위조 · 의료법위반">
-      <span>04</span><div><strong>의료사고 센터</strong><em>MEDICAL DISPUTE</em></div><b>→</b>
-    </button>
-
-    <button class="practice-item" data-img="assets/center-infection.png" data-title="감염분쟁<br>센터" data-keywords="헤르페스 · 곤지름(HPV) · 에이즈 · 병원감염 · 감염 경위 분석">
-      <span>05</span><div><strong>감염분쟁 센터</strong><em>INFECTION DISPUTE</em></div><b>→</b>
-    </button>
-
-    <button class="practice-item" data-img="assets/center-bankruptcy.png" data-title="회생·파산<br>센터" data-keywords="개인회생 · 파산 · 채무조정 · 신용불량 · 압류해제 · 채권추심 대응">
-      <span>06</span><div><strong>회생·파산 센터</strong><em>REHABILITATION · BANKRUPTCY</em></div><b>→</b>
-    </button>
-
-    <button class="practice-item" data-img="assets/center-traffic.png" data-title="교통사고<br>센터" data-keywords="음주운전 · 뺑소니 · 12대 중과실 · 형사합의 · 보험분쟁 · 손해배상">
-      <span>07</span><div><strong>교통사고 센터</strong><em>TRAFFIC ACCIDENT</em></div><b>→</b>
-    </button>
-
-    <button class="practice-item" data-img="assets/center-family.png" data-title="이혼·상속<br>센터" data-keywords="이혼소송 · 재산분할 · 위자료 · 양육권 · 상속분쟁 · 유류분 · 상속포기">
-      <span>08</span><div><strong>이혼·상속 센터</strong><em>FAMILY LAW</em></div><b>→</b>
-    </button>
-
-  </div>
-</section>
-
-<section class="lawyers" id="lawyers">
-  <div class="section-head">
-    <span>LAWYERS OF YUIL</span>
-    <h2>변호인단 소개</h2>
-    <p>
-      한 명의 의뢰인에게 <strong>변호인단 전체의 전략.</strong><br>
-      의뢰인이 미처 보지 못한 증거와 형사사건의 수사기록까지<br>
-      유일은 대응 로드맵을 제시합니다.
-    </p>
-  </div>
-
-  <div class="lawyer-track">
-    <article>
-      <img src="assets/lawyer-01.png" alt="정호길">
-      <small>대표변호사</small>
-      <h3>정호길</h3>
-      <p>25년 경력 형사전문</p>
-      <ul><li>대표 사건 총괄</li><li>증거와 진술 흐름 분석</li><li>수사 대응 로드맵 설계</li></ul>
-    </article>
-
-    <article>
-      <img src="assets/lawyer-02.png" alt="김제도">
-      <small>변호사</small>
-      <h3>김제도</h3>
-      <p>형사사건 대응</p>
-      <ul><li>초기 진술 전략</li><li>조사 대응 설계</li><li>증거자료 검토</li></ul>
-    </article>
-
-    <article>
-      <img src="assets/lawyer-03.png" alt="정주형">
-      <small>변호사</small>
-      <h3>정주형</h3>
-      <p>수사 대응</p>
-      <ul><li>기록 분석</li><li>고소·피고소 검토</li><li>방어 포인트 정리</li></ul>
-    </article>
-
-    <article>
-      <img src="assets/lawyer-04.png" alt="김의환">
-      <small>변호사</small>
-      <h3>김의환</h3>
-      <p>증거 분석</p>
-      <ul><li>사실관계 구조화</li><li>증거 흐름 분석</li><li>법리 검토</li></ul>
-    </article>
-
-    <article>
-      <img src="assets/lawyer-05.png" alt="이경숙">
-      <small>변호사</small>
-      <h3>이경숙</h3>
-      <p>사건 관리</p>
-      <ul><li>의뢰인 상황 분석</li><li>분쟁 해결 방향 설계</li><li>안정적인 사건 진행</li></ul>
-    </article>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <h2>상담안내</h2>
-  <p>빠른 상담이 해결의 시작입니다.</p>
-
-  <div class="contact-grid">
-    <a href="tel:01000000000">전화 상담</a>
-    <a href="#">카톡 상담</a>
-    <a href="#">상담 예약</a>
-  </div>
-</section>
-
-<section class="location" id="location">
-  <div>
-    <h2>오시는 길</h2>
-    <p>서울특별시 서초구 서초대로 123<br>법무법인 유일</p>
-    <a href="#">지도 자세히 보기 →</a>
-  </div>
-  <div class="map"><span>LAW FIRM YUIL</span></div>
-</section>
-
-<aside class="quick-banner">
-  <a href="#">💬<span>카톡</span></a>
-  <a href="tel:01000000000">☎<span>전화</span></a>
-  <a href="#">□<span>예약</span></a>
-</aside>
-
-<script src="script.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
