@@ -1454,3 +1454,489 @@ body {
     justify-content: space-between;
   }
 }
+/* =========================================
+   PHASE 2 — LAWYERS REFINEMENT
+========================================= */
+
+/* 변호사 섹션 전체 여백 */
+.lawyers {
+  position: relative;
+  padding: 150px 0 135px;
+
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(185, 155, 103, 0.09),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #0a0b0c 0%,
+      #111214 52%,
+      #090a0b 100%
+    );
+}
+
+/* 제목과 설명 배치 */
+.lawyers .section-head {
+  width: min(calc(100% - 80px), 1240px);
+  margin: 0 auto 68px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(340px, 0.75fr)
+    minmax(320px, 0.55fr);
+  justify-content: space-between;
+  align-items: end;
+  gap: 80px;
+}
+
+.lawyers .section-title {
+  max-width: 620px;
+
+  color: #f5f2ec;
+
+  font-size: clamp(34px, 4vw, 53px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.052em;
+}
+
+.lawyer-intro {
+  position: relative;
+
+  max-width: 340px;
+  margin: 0 0 4px auto;
+  padding-left: 28px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.85;
+  text-align: left;
+}
+
+.lawyer-intro::before {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 0;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      var(--yuil-gold, #b99b67),
+      rgba(185, 155, 103, 0.08)
+    );
+}
+
+
+/* =========================================
+   LAWYER CARDS
+========================================= */
+
+.lawyer-stage {
+  width: min(calc(100% - 24px), 1320px);
+  height: 575px;
+
+  margin: 0 auto;
+
+  perspective: 1900px;
+}
+
+.lawyer-card {
+  width: 302px;
+  height: 458px;
+
+  overflow: hidden;
+
+  /* 항상 골드 테두리 표시 */
+  border:
+    1px solid rgba(201, 172, 117, 0.56);
+
+  /* 더 둥근 고급 카드 */
+  border-radius: 22px;
+
+  background: #151618;
+
+  opacity: 0.66;
+
+  filter:
+    grayscale(0.62)
+    brightness(0.74);
+
+  box-shadow:
+    0 24px 65px rgba(0, 0, 0, 0.38),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+
+  transition:
+    transform 0.78s var(--yuil-ease, cubic-bezier(.22,.8,.22,1)),
+    opacity 0.48s ease,
+    filter 0.48s ease,
+    border-color 0.4s ease,
+    box-shadow 0.48s ease;
+}
+
+/* 선택되지 않은 카드도 같은 골드 디자인 */
+.lawyer-card:not(.active) {
+  border-color: rgba(185, 155, 103, 0.48);
+}
+
+/* 선택 카드 */
+.lawyer-card.active {
+  opacity: 1;
+  filter: none;
+
+  border-color: rgba(218, 192, 142, 0.96);
+
+  box-shadow:
+    0 36px 100px rgba(0, 0, 0, 0.56),
+    0 0 0 1px rgba(218, 192, 142, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* 카드 위에 은은한 빛 */
+.lawyer-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      transparent 24%,
+      transparent 70%,
+      rgba(185, 155, 103, 0.08)
+    );
+
+  pointer-events: none;
+}
+
+.lawyer-card::after {
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 48%,
+      rgba(5, 5, 5, 0.16) 65%,
+      rgba(5, 5, 5, 0.94) 100%
+    );
+}
+
+/* 사진 크기와 위치 통일 */
+.lawyer-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center top;
+
+  border-radius: inherit;
+
+  transform: scale(1.01);
+
+  transition:
+    transform 0.8s var(--yuil-ease, cubic-bezier(.22,.8,.22,1));
+}
+
+/* 호버 효과는 과하지 않게 */
+.lawyer-card:hover img {
+  transform: scale(1.025);
+}
+
+.lawyer-card:hover {
+  border-color: rgba(218, 192, 142, 0.92);
+}
+
+/* 카드 이름 영역 */
+.card-info {
+  padding: 31px 24px 26px;
+}
+
+.card-role {
+  margin-bottom: 9px;
+
+  color: #d4ba8a;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+}
+
+.card-name {
+  color: #ffffff;
+
+  font-family:
+    Pretendard,
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    sans-serif;
+
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+
+/* =========================================
+   COVERFLOW CONTROLS
+========================================= */
+
+.controls {
+  bottom: 8px;
+}
+
+.arrow {
+  width: 46px;
+  height: 46px;
+
+  border:
+    1px solid rgba(185, 155, 103, 0.42);
+
+  background: rgba(255, 255, 255, 0.025);
+  color: #d8c094;
+
+  backdrop-filter: blur(8px);
+}
+
+.arrow:hover {
+  border-color: #c8aa73;
+
+  background: rgba(185, 155, 103, 0.1);
+  color: #ffffff;
+}
+
+.dot {
+  background: rgba(185, 155, 103, 0.28);
+}
+
+.dot.active {
+  background:
+    linear-gradient(
+      90deg,
+      #d2ba8e,
+      #a98650
+    );
+}
+
+
+/* =========================================
+   LAWYER CAREER
+========================================= */
+
+.career {
+  width: min(calc(100% - 80px), 1120px);
+
+  margin: 30px auto 0;
+  padding: 38px 0 40px;
+
+  border-top:
+    1px solid rgba(185, 155, 103, 0.3);
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+.career-head {
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.career-role {
+  margin-bottom: 8px;
+
+  color: #c9aa73;
+
+  font-size: 11px;
+  letter-spacing: 0.13em;
+}
+
+.career-name {
+  font-family:
+    Pretendard,
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    sans-serif;
+
+  font-size: 31px;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.career-field {
+  color: rgba(255, 255, 255, 0.64);
+
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* 주요 경력이라는 작은 라벨 */
+.career-label {
+  margin-top: 4px;
+
+  color: #c9aa73;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+/* 경력 목록 */
+.career-list {
+  gap: 15px 48px;
+}
+
+.career-list li {
+  min-height: 30px;
+
+  display: flex;
+  align-items: flex-start;
+
+  padding-left: 34px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.72;
+}
+
+/* 기존 작은 점 제거 */
+.career-list li::before {
+  content: "✓";
+
+  top: 0;
+  left: 0;
+
+  width: 23px;
+  height: 23px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(185, 155, 103, 0.52);
+  border-radius: 50%;
+
+  background: rgba(185, 155, 103, 0.07);
+  color: #d2ba8e;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 980px) {
+  .lawyers {
+    padding: 115px 0 105px;
+  }
+
+  .lawyers .section-head {
+    width: min(calc(100% - 48px), 1240px);
+
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    margin-bottom: 54px;
+  }
+
+  .lawyer-intro {
+    margin-left: 0;
+  }
+
+  .lawyer-card {
+    width: 288px;
+    height: 432px;
+
+    border-radius: 19px;
+  }
+
+  .career {
+    width: min(calc(100% - 48px), 1120px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+  .lawyers {
+    padding: 92px 0 84px;
+  }
+
+  .lawyers .section-head {
+    width: calc(100% - 32px);
+
+    margin-bottom: 42px;
+  }
+
+  .lawyers .section-title {
+    font-size: 34px;
+  }
+
+  .lawyer-intro {
+    padding-left: 20px;
+
+    font-size: 12px;
+  }
+
+  .lawyer-stage {
+    width: 100%;
+    height: 505px;
+  }
+
+  .lawyer-card {
+    width: 72vw;
+    max-width: 286px;
+    height: 408px;
+
+    border-radius: 18px;
+  }
+
+  .career {
+    width: calc(100% - 32px);
+
+    margin-top: 22px;
+    padding: 30px 0 32px;
+  }
+
+  .career-head {
+    align-items: flex-start;
+  }
+
+  .career-name {
+    font-size: 27px;
+  }
+
+  .career-field {
+    font-size: 12px;
+  }
+
+  .career-list {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .career-list li {
+    padding-left: 32px;
+
+    font-size: 13px;
+  }
+}
