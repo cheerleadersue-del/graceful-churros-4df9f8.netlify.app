@@ -1,42 +1,186 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* =========================
-     HEADER
-  ========================= */
+  /* ===================================
+     JS PART 1
+     HEADER + MOBILE MENU
+  =================================== */
 
+  const body = document.body;
   const header = document.getElementById("header");
+  const menuButton = document.getElementById("menuButton");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-  window.addEventListener("scroll", () => {
-    header?.classList.toggle("scrolled", window.scrollY > 20);
+  /* ---------- HEADER SCROLL ---------- */
+
+  function updateHeaderState() {
+    if (!header) return;
+
+    header.classList.toggle(
+      "scrolled",
+      window.scrollY > 20
+    );
+  }
+
+  updateHeaderState();
+
+  window.addEventListener(
+    "scroll",
+    updateHeaderState,
+    { passive: true }
+  );
+
+
+  /* ---------- MOBILE MENU OPEN ---------- */
+
+  function openMobileMenu() {
+    if (!menuButton || !mobileMenu) return;
+
+    menuButton.classList.add("active");
+    mobileMenu.classList.add("open");
+    header?.classList.add("menu-active");
+    body.classList.add("menu-open");
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+    menuButton.setAttribute(
+      "aria-label",
+      "메뉴 닫기"
+    );
+  }
+
+
+  /* ---------- MOBILE MENU CLOSE ---------- */
+
+  function closeMobileMenu() {
+    if (!menuButton || !mobileMenu) return;
+
+    menuButton.classList.remove("active");
+    mobileMenu.classList.remove("open");
+    header?.classList.remove("menu-active");
+    body.classList.remove("menu-open");
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    menuButton.setAttribute(
+      "aria-label",
+      "메뉴 열기"
+    );
+  }
+
+
+  /* ---------- MOBILE MENU TOGGLE ---------- */
+
+  function toggleMobileMenu() {
+    if (!mobileMenu) return;
+
+    const isOpen =
+      mobileMenu.classList.contains("open");
+
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  }
+
+
+  menuButton?.addEventListener(
+    "click",
+    toggleMobileMenu
+  );
+
+
+  /* ---------- CLOSE AFTER LINK CLICK ---------- */
+
+  const mobileMenuLinks = mobileMenu
+    ? [...mobileMenu.querySelectorAll("a")]
+    : [];
+
+  mobileMenuLinks.forEach((link) => {
+    link.addEventListener(
+      "click",
+      closeMobileMenu
+    );
   });
 
-  /* =========================
-     변호사 카드
-  ========================= */
 
-  const cards = [...document.querySelectorAll(".lawyer-card")];
+  /* ---------- ESC KEY ---------- */
 
-  const prevButton = document.getElementById("prev");
-  const nextButton = document.getElementById("next");
-  const dotsContainer = document.getElementById("dots");
+  window.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.key === "Escape") {
+        closeMobileMenu();
+      }
+    }
+  );
 
-  const careerSection = document.getElementById("career");
-  const careerRole = document.getElementById("careerRole");
-  const careerName = document.getElementById("careerName");
-  const careerField = document.getElementById("careerField");
-  const careerList = document.getElementById("careerList");
 
-  let activeIndex = 0;
+  /* ---------- RESIZE RESET ---------- */
 
-  /*
-    index.html의 변호사 카드 순서와
-    아래 profiles 순서를 동일하게 유지해야 합니다.
-  */
+  window.addEventListener(
+    "resize",
+    () => {
+      if (window.innerWidth > 980) {
+        closeMobileMenu();
+      }
+    }
+  );
+    /* ===================================
+     JS PART 2
+     LAWYER DATA + BASIC ELEMENTS
+  =================================== */
 
-  const profiles = [
+  const lawyerCards = [
+    ...document.querySelectorAll(".lawyer-card")
+  ];
+
+  const prevButton =
+    document.getElementById("prev");
+
+  const nextButton =
+    document.getElementById("next");
+
+  const dotsContainer =
+    document.getElementById("dots");
+
+  const careerSection =
+    document.getElementById("career");
+
+  const careerRole =
+    document.getElementById("careerRole");
+
+  const careerName =
+    document.getElementById("careerName");
+
+  const careerField =
+    document.getElementById("careerField");
+
+  const careerList =
+    document.getElementById("careerList");
+
+
+  /* ---------- ACTIVE INDEX ---------- */
+
+  let activeLawyerIndex = 0;
+
+
+  /* ---------- LAWYER DATA ---------- */
+
+  const lawyerProfiles = [
+
     {
       role: "대표변호사",
+
       name: "정호길",
+
       field: "형사 · 수사 및 재판 대응",
+
       career: [
         "법무법인 유일 대표변호사",
         "25년 경력 형사전문 변호사",
@@ -47,10 +191,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
 
+
     {
       role: "변호사",
+
       name: "김제도",
+
       field: "형사 · 기업분쟁",
+
       career: [
         "법무법인 유일 변호사",
         "경제범죄 및 재산범죄 사건 수행",
@@ -61,10 +209,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
 
+
     {
       role: "변호사",
+
       name: "정주현",
+
       field: "민사 · 손해배상",
+
       career: [
         "법무법인 유일 변호사",
         "민사 및 손해배상 사건 수행",
@@ -75,10 +227,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
 
+
     {
       role: "변호사",
+
       name: "심상한",
+
       field: "회생 · 기업법무",
+
       career: [
         "법무법인 유일 변호사",
         "개인회생·파산 사건 수행",
@@ -89,10 +245,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
 
+
     {
       role: "변호사",
+
       name: "이경숙",
+
       field: "가사 · 민사",
+
       career: [
         "법무법인 유일 변호사",
         "이혼·재산분할 사건 수행",
@@ -103,10 +263,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
 
+
     {
       role: "파트너변호사",
+
       name: "성명 입력",
+
       field: "형사 · 공공기관 자문",
+
       career: [
         "제11회 변호사시험 합격",
         "고려대학교 법학과 졸업",
@@ -116,268 +280,673 @@ document.addEventListener("DOMContentLoaded", () => {
         "형사사건 다수 수행"
       ]
     }
+
   ];
 
-  /* 하단 점 만들기 */
 
-  if (dotsContainer && cards.length > 0) {
-    cards.forEach((_, index) => {
-      const dot = document.createElement("button");
+  /* ---------- CREATE DOTS ---------- */
+
+  function createLawyerDots() {
+    if (
+      !dotsContainer ||
+      lawyerCards.length === 0
+    ) {
+      return;
+    }
+
+    dotsContainer.innerHTML = "";
+
+    lawyerCards.forEach((_, index) => {
+      const dot =
+        document.createElement("button");
 
       dot.type = "button";
+
       dot.className = "dot";
+
       dot.setAttribute(
         "aria-label",
         `${index + 1}번째 변호사 보기`
       );
 
-      dot.addEventListener("click", () => {
-        activeIndex = index;
-        renderLawyers();
-      });
+      dot.addEventListener(
+        "click",
+        () => {
+          activeLawyerIndex = index;
+
+          renderLawyers();
+        }
+      );
 
       dotsContainer.appendChild(dot);
     });
   }
 
-  const dots = dotsContainer
+
+  /* ---------- DOT ELEMENTS ---------- */
+
+  createLawyerDots();
+
+  const lawyerDots = dotsContainer
     ? [...dotsContainer.children]
     : [];
 
-  /*
-    현재 카드와 다른 카드 사이의 거리를 계산합니다.
-    마지막 카드 다음에 첫 카드가 자연스럽게 연결됩니다.
-  */
 
-  function getCardOffset(index) {
-    let difference = index - activeIndex;
+  /* ---------- CARD CLICK ---------- */
 
-    if (difference > cards.length / 2) {
-      difference -= cards.length;
+  lawyerCards.forEach(
+    (card, index) => {
+
+      card.addEventListener(
+        "click",
+        () => {
+
+          activeLawyerIndex = index;
+
+          renderLawyers();
+        }
+      );
+
+
+      /* 키보드 접근성 */
+
+      card.addEventListener(
+        "keydown",
+        (event) => {
+
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+            event.preventDefault();
+
+            activeLawyerIndex = index;
+
+            renderLawyers();
+          }
+        }
+      );
+
+    }
+  );
+    /* ===================================
+     JS PART 3
+     COVERFLOW POSITION + CONTROLS
+  =================================== */
+
+  /* ---------- SHORTEST OFFSET ---------- */
+
+  function getLawyerOffset(index) {
+    let difference =
+      index - activeLawyerIndex;
+
+    const total =
+      lawyerCards.length;
+
+    if (
+      difference >
+      total / 2
+    ) {
+      difference -= total;
     }
 
-    if (difference < -cards.length / 2) {
-      difference += cards.length;
+    if (
+      difference <
+      -total / 2
+    ) {
+      difference += total;
     }
 
     return difference;
   }
 
-  /* 선택된 변호사의 주요 경력 변경 */
 
-  function updateCareer() {
-    const profile = profiles[activeIndex];
+  /* ---------- RESPONSIVE STEP ---------- */
 
-    if (!profile || !careerSection) {
-      return;
+  function getLawyerStep() {
+    const width =
+      window.innerWidth;
+
+    if (width <= 640) {
+      return 112;
     }
 
-    careerSection.classList.add("changing");
+    if (width <= 980) {
+      return 185;
+    }
 
-    window.setTimeout(() => {
-      if (careerRole) {
-        careerRole.textContent = profile.role;
-      }
+    if (width <= 1180) {
+      return 210;
+    }
 
-      if (careerName) {
-        careerName.textContent = profile.name;
-      }
-
-      if (careerField) {
-        careerField.textContent = profile.field;
-      }
-
-      if (careerList) {
-        careerList.innerHTML = profile.career
-          .map((careerItem) => {
-            return `<li>${careerItem}</li>`;
-          })
-          .join("");
-      }
-
-      careerSection.classList.remove("changing");
-    }, 140);
+    return 225;
   }
 
-  /* 변호사 카드 위치 변경 */
+
+  /* ---------- CARD POSITION ---------- */
+
+  function getCardTransform(
+    offset
+  ) {
+    const distance =
+      Math.abs(offset);
+
+    const horizontalStep =
+      getLawyerStep();
+
+    const translateX =
+      offset * horizontalStep;
+
+    let translateZ = -110;
+    let rotateY = 0;
+    let scale = 0.76;
+    let opacity = 0.46;
+
+    if (distance === 0) {
+      translateZ = 130;
+      rotateY = 0;
+      scale = 1;
+      opacity = 1;
+    }
+
+    if (distance === 1) {
+      translateZ = 15;
+      rotateY =
+        offset < 0
+          ? 7
+          : -7;
+      scale = 0.86;
+      opacity = 0.7;
+    }
+
+    if (distance >= 2) {
+      translateZ = -110;
+      rotateY =
+        offset < 0
+          ? 9
+          : -9;
+      scale = 0.76;
+      opacity = 0.42;
+    }
+
+    return {
+      distance,
+      translateX,
+      translateZ,
+      rotateY,
+      scale,
+      opacity
+    };
+  }
+
+
+  /* ---------- RENDER LAWYERS ---------- */
 
   function renderLawyers() {
-    if (cards.length === 0) {
+    if (
+      lawyerCards.length === 0
+    ) {
       return;
     }
 
-    const isMobile = window.innerWidth <= 640;
-    const isTablet = window.innerWidth <= 900;
+    lawyerCards.forEach(
+      (card, index) => {
 
-    const horizontalStep = isMobile
-      ? 112
-      : isTablet
-        ? 185
-        : 225;
+        const offset =
+          getLawyerOffset(index);
 
-    cards.forEach((card, index) => {
-      const offset = getCardOffset(index);
-      const distance = Math.abs(offset);
+        const transform =
+          getCardTransform(offset);
 
-      const translateX = offset * horizontalStep;
+        card.style.setProperty(
+          "--x",
+          `${transform.translateX}px`
+        );
 
-      const translateZ =
-        distance === 0
-          ? 130
-          : distance === 1
-            ? 15
-            : -110;
+        card.style.setProperty(
+          "--z",
+          `${transform.translateZ}px`
+        );
 
-      const rotateY =
-        offset === 0
-          ? 0
-          : offset < 0
-            ? 7
-            : -7;
+        card.style.setProperty(
+          "--r",
+          `${transform.rotateY}deg`
+        );
 
-      const scale =
-        distance === 0
-          ? 1
-          : distance === 1
-            ? 0.86
-            : 0.76;
+        card.style.setProperty(
+          "--s",
+          transform.scale
+        );
 
-      card.style.setProperty(
-        "--x",
-        `${translateX}px`
-      );
+        card.style.zIndex =
+          String(
+            30 -
+            transform.distance
+          );
 
-      card.style.setProperty(
-        "--z",
-        `${translateZ}px`
-      );
+        card.style.opacity =
+          transform.distance > 2
+            ? "0"
+            : String(transform.opacity);
 
-      card.style.setProperty(
-        "--r",
-        `${rotateY}deg`
-      );
+        card.style.pointerEvents =
+          transform.distance > 2
+            ? "none"
+            : "auto";
 
-      card.style.setProperty(
-        "--s",
-        scale
-      );
+        card.classList.toggle(
+          "active",
+          index === activeLawyerIndex
+        );
 
-      card.style.zIndex = String(20 - distance);
+        card.setAttribute(
+          "aria-hidden",
+          transform.distance > 2
+            ? "true"
+            : "false"
+        );
 
-      card.style.opacity =
-        distance > 2 ? "0" : "";
+        card.tabIndex =
+          transform.distance > 2
+            ? -1
+            : 0;
+      }
+    );
 
-      card.style.pointerEvents =
-        distance > 2 ? "none" : "auto";
 
-      card.classList.toggle(
-        "active",
-        index === activeIndex
-      );
-    });
+    /* 하단 점 활성화 */
 
-    dots.forEach((dot, index) => {
-      dot.classList.toggle(
-        "active",
-        index === activeIndex
-      );
-    });
+    lawyerDots.forEach(
+      (dot, index) => {
 
-    updateCareer();
+        const isActive =
+          index === activeLawyerIndex;
+
+        dot.classList.toggle(
+          "active",
+          isActive
+        );
+
+        dot.setAttribute(
+          "aria-current",
+          isActive
+            ? "true"
+            : "false"
+        );
+      }
+    );
+
+
+    /* 주요 경력 변경 */
+
+    updateLawyerCareer();
   }
 
-  /* 이전 버튼 */
 
-  prevButton?.addEventListener("click", () => {
-    activeIndex =
-      (activeIndex - 1 + cards.length) %
-      cards.length;
+  /* ---------- PREVIOUS ---------- */
+
+  function showPreviousLawyer() {
+    if (
+      lawyerCards.length === 0
+    ) {
+      return;
+    }
+
+    activeLawyerIndex =
+      (
+        activeLawyerIndex -
+        1 +
+        lawyerCards.length
+      ) %
+      lawyerCards.length;
 
     renderLawyers();
-  });
+  }
 
-  /* 다음 버튼 */
 
-  nextButton?.addEventListener("click", () => {
-    activeIndex =
-      (activeIndex + 1) %
-      cards.length;
+  /* ---------- NEXT ---------- */
+
+  function showNextLawyer() {
+    if (
+      lawyerCards.length === 0
+    ) {
+      return;
+    }
+
+    activeLawyerIndex =
+      (
+        activeLawyerIndex +
+        1
+      ) %
+      lawyerCards.length;
 
     renderLawyers();
-  });
+  }
 
-  /* 카드를 직접 클릭 */
 
-  cards.forEach((card, index) => {
-    card.addEventListener("click", () => {
-      activeIndex = index;
-      renderLawyers();
-    });
-  });
+  /* ---------- BUTTON EVENTS ---------- */
+
+  prevButton?.addEventListener(
+    "click",
+    showPreviousLawyer
+  );
+
+  nextButton?.addEventListener(
+    "click",
+    showNextLawyer
+  );
+
+
+  /* ---------- KEYBOARD ARROWS ---------- */
+
+  const lawyerStage =
+    document.querySelector(
+      ".lawyer-stage"
+    );
+
+  lawyerStage?.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key === "ArrowLeft"
+      ) {
+        event.preventDefault();
+
+        showPreviousLawyer();
+      }
+
+      if (
+        event.key === "ArrowRight"
+      ) {
+        event.preventDefault();
+
+        showNextLawyer();
+      }
+    }
+  );
+
+
+  /* ---------- SWIPE SUPPORT ---------- */
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lawyerStage?.addEventListener(
+    "touchstart",
+    (event) => {
+
+      touchStartX =
+        event.changedTouches[0]
+          .screenX;
+    },
+    {
+      passive: true
+    }
+  );
+
+  lawyerStage?.addEventListener(
+    "touchend",
+    (event) => {
+
+      touchEndX =
+        event.changedTouches[0]
+          .screenX;
+
+      const swipeDistance =
+        touchEndX -
+        touchStartX;
+
+      const minimumSwipe = 45;
+
+      if (
+        swipeDistance >
+        minimumSwipe
+      ) {
+        showPreviousLawyer();
+      }
+
+      if (
+        swipeDistance <
+        -minimumSwipe
+      ) {
+        showNextLawyer();
+      }
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  /* ---------- RESIZE ---------- */
+
+  let resizeTimer = null;
 
   window.addEventListener(
     "resize",
-    renderLawyers
+    () => {
+
+      window.clearTimeout(
+        resizeTimer
+      );
+
+      resizeTimer =
+        window.setTimeout(
+          () => {
+            renderLawyers();
+          },
+          120
+        );
+    }
   );
+    /* ===================================
+     JS PART 4
+     LAWYER CAREER CHANGE
+  =================================== */
+
+  function updateLawyerCareer() {
+    const profile =
+      lawyerProfiles[
+        activeLawyerIndex
+      ];
+
+    if (
+      !profile ||
+      !careerSection
+    ) {
+      return;
+    }
+
+    careerSection.classList.add(
+      "changing"
+    );
+
+    window.setTimeout(() => {
+
+      if (careerRole) {
+        careerRole.textContent =
+          profile.role;
+      }
+
+      if (careerName) {
+        careerName.textContent =
+          profile.name;
+      }
+
+      if (careerField) {
+        careerField.textContent =
+          profile.field;
+      }
+
+      if (careerList) {
+        careerList.innerHTML =
+          profile.career
+            .map((item) => {
+              return `
+                <li>
+                  ${item}
+                </li>
+              `;
+            })
+            .join("");
+      }
+
+      careerSection.classList.remove(
+        "changing"
+      );
+
+    }, 140);
+  }
+
+
+  /* ---------- INITIALIZE LAWYERS ---------- */
 
   renderLawyers();
-
-  /* =========================
-     전문센터
-  ========================= */
+    /* ===================================
+     JS PART 5
+     PRACTICE CENTER CHANGE
+  =================================== */
 
   const centerItems = [
-    ...document.querySelectorAll(".center-item")
+    ...document.querySelectorAll(
+      ".center-item"
+    )
   ];
 
   const centerImage =
-    document.getElementById("centerImage");
+    document.getElementById(
+      "centerImage"
+    );
 
   const centerTitle =
-    document.getElementById("centerTitle");
+    document.getElementById(
+      "centerTitle"
+    );
 
   const centerEnglish =
-    document.getElementById("centerEn");
+    document.getElementById(
+      "centerEn"
+    );
+
+
+  /* ---------- IMAGE PRELOAD ---------- */
+
+  function preloadCenterImages() {
+    centerItems.forEach((item) => {
+      const imagePath =
+        item.dataset.image;
+
+      if (!imagePath) {
+        return;
+      }
+
+      const preloadImage =
+        new Image();
+
+      preloadImage.src =
+        imagePath;
+    });
+  }
+
+
+  /* ---------- ACTIVE CENTER ---------- */
+
+  function setActiveCenter(item) {
+    centerItems.forEach(
+      (centerItem) => {
+
+        centerItem.classList.remove(
+          "active"
+        );
+
+        centerItem.setAttribute(
+          "aria-pressed",
+          "false"
+        );
+      }
+    );
+
+    item.classList.add(
+      "active"
+    );
+
+    item.setAttribute(
+      "aria-pressed",
+      "true"
+    );
+  }
+
+
+  /* ---------- CONTENT CHANGE ---------- */
 
   function changeCenter(item) {
-    centerItems.forEach((centerItem) => {
-      centerItem.classList.remove("active");
-    });
+    if (!item) {
+      return;
+    }
 
-    item.classList.add("active");
+    const nextImage =
+      item.dataset.image || "";
+
+    const nextTitle =
+      item.dataset.title || "";
+
+    const nextEnglish =
+      item.dataset.en || "";
+
+    setActiveCenter(item);
 
     if (!centerImage) {
       return;
     }
 
-    centerImage.style.opacity = "0";
+    centerImage.style.opacity =
+      "0";
+
     centerImage.style.transform =
       "scale(1.025)";
 
     window.setTimeout(() => {
+
       centerImage.src =
-        item.dataset.image || "";
+        nextImage;
 
       centerImage.alt =
-        item.dataset.title || "전문센터";
+        nextTitle ||
+        "전문센터 대표 이미지";
 
       if (centerTitle) {
         centerTitle.textContent =
-          item.dataset.title || "";
+          nextTitle;
       }
 
       if (centerEnglish) {
         centerEnglish.textContent =
-          item.dataset.en || "";
+          nextEnglish;
       }
 
-      centerImage.style.opacity = "1";
+      centerImage.style.opacity =
+        "1";
+
       centerImage.style.transform =
         "scale(1)";
+
     }, 180);
   }
 
+
+  /* ---------- CENTER EVENTS ---------- */
+
   centerItems.forEach((item) => {
+
+    item.setAttribute(
+      "aria-pressed",
+      item.classList.contains("active")
+        ? "true"
+        : "false"
+    );
+
+
     item.addEventListener(
       "mouseenter",
       () => {
@@ -385,17 +954,57 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
+
     item.addEventListener(
       "click",
       () => {
         changeCenter(item);
       }
     );
+
+
+    item.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+          event.preventDefault();
+
+          changeCenter(item);
+        }
+      }
+    );
+
   });
 
-  /* =========================
-     내부 링크 부드러운 이동
-  ========================= */
+
+  /* ---------- INITIALIZE CENTERS ---------- */
+
+  preloadCenterImages();
+
+  const initialCenter =
+    centerItems.find((item) =>
+      item.classList.contains(
+        "active"
+      )
+    ) ||
+    centerItems[0];
+
+  if (initialCenter) {
+    changeCenter(
+      initialCenter
+    );
+  }
+    /* ===================================
+     JS PART 6
+     SMOOTH SCROLL + REVEAL
+     + FINAL INITIALIZATION
+  =================================== */
+
+  /* ---------- SMOOTH ANCHOR LINKS ---------- */
 
   const anchorLinks = [
     ...document.querySelectorAll(
@@ -407,24 +1016,28 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener(
       "click",
       (event) => {
-        const selector =
+        const targetSelector =
           link.getAttribute("href");
 
         if (
-          !selector ||
-          selector === "#"
+          !targetSelector ||
+          targetSelector === "#"
         ) {
           return;
         }
 
         const target =
-          document.querySelector(selector);
+          document.querySelector(
+            targetSelector
+          );
 
         if (!target) {
           return;
         }
 
         event.preventDefault();
+
+        closeMobileMenu();
 
         target.scrollIntoView({
           behavior: "smooth",
@@ -433,4 +1046,133 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
   });
+
+
+  /* ---------- REVEAL ELEMENTS ---------- */
+
+  const revealElements = [
+    ...document.querySelectorAll(
+      ".reveal"
+    )
+  ];
+
+
+  /* ---------- FALLBACK ---------- */
+
+  function showAllRevealElements() {
+    revealElements.forEach(
+      (element) => {
+        element.classList.add(
+          "visible"
+        );
+      }
+    );
+  }
+
+
+  /* ---------- INTERSECTION OBSERVER ---------- */
+
+  if (
+    "IntersectionObserver" in window
+  ) {
+    const revealObserver =
+      new IntersectionObserver(
+        (entries, observer) => {
+
+          entries.forEach((entry) => {
+
+            if (
+              entry.isIntersecting
+            ) {
+              entry.target.classList.add(
+                "visible"
+              );
+
+              observer.unobserve(
+                entry.target
+              );
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.16,
+          rootMargin:
+            "0px 0px -50px 0px"
+        }
+      );
+
+
+    revealElements.forEach(
+      (element) => {
+        revealObserver.observe(
+          element
+        );
+      }
+    );
+
+  } else {
+    showAllRevealElements();
+  }
+
+
+  /* ---------- IMAGE LOAD FALLBACK ---------- */
+
+  const pageImages = [
+    ...document.querySelectorAll("img")
+  ];
+
+  pageImages.forEach((image) => {
+    image.addEventListener(
+      "error",
+      () => {
+        image.classList.add(
+          "image-error"
+        );
+      }
+    );
+  });
+
+
+  /* ---------- CURRENT YEAR ---------- */
+
+  const currentYearElement =
+    document.getElementById(
+      "currentYear"
+    );
+
+  if (currentYearElement) {
+    currentYearElement.textContent =
+      new Date().getFullYear();
+  }
+
+
+  /* ---------- FINAL HEADER CHECK ---------- */
+
+  updateHeaderState();
+
+
+  /* ---------- FINAL MENU RESET ---------- */
+
+  if (
+    window.innerWidth > 980
+  ) {
+    closeMobileMenu();
+  }
+
+
+  /* ---------- FINAL LAWYER RENDER ---------- */
+
+  renderLawyers();
+
+
+  /* ---------- FINAL CENTER STATE ---------- */
+
+  if (initialCenter) {
+    setActiveCenter(
+      initialCenter
+    );
+  }
+
 });
