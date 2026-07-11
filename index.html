@@ -2,128 +2,1337 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#08090b">
-  <title>법무법인 유일 | 증거주의 수사·재판 대응</title>
-  <meta name="description" content="법무법인 유일은 증거와 기록을 중심으로 수사와 재판에 대응합니다.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0b0b0b"
+  >
+
+  <title>
+    법무법인 유일 | 증거주의 수사·재판 대응
+  </title>
+
+  <meta
+    name="description"
+    content="법무법인 유일은 증거와 기록을 중심으로 수사와 재판에 대응합니다."
+  >
+
+  <meta
+    name="keywords"
+    content="법무법인 유일, 형사전문변호사, 민사변호사, 가사변호사, 개인회생, 공증"
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <!-- Open Graph -->
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="법무법인 유일 | 증거주의 수사·재판 대응"
+  >
+
+  <meta
+    property="og:description"
+    content="감정이 아닌 기록으로, 추측이 아닌 증거로 대응합니다."
+  >
+
+  <meta
+    property="og:image"
+    content="assets/hero/hero-building.png"
+  >
+
+  <meta
+    property="og:locale"
+    content="ko_KR"
+  >
+
+  <!-- Google Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
 </head>
+
 <body>
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="법무법인 유일 홈">
-        <span class="brand-symbol">Y</span>
-        <span class="brand-text"><strong>법무법인 유일</strong><small>LAW FIRM YUIL</small></span>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header
+    class="header"
+    id="header"
+  >
+    <div class="wrap header-inner">
+
+      <!-- Logo -->
+      <a
+        class="logo"
+        href="#top"
+        aria-label="법무법인 유일 홈페이지 첫 화면"
+      >
+        <img
+          class="logo-icon"
+          src="assets/icons/logo.svg"
+          alt=""
+        >
+
+        <span class="logo-text">
+          <strong>법무법인 유일</strong>
+          <small>LAW FIRM YUIL</small>
+        </span>
       </a>
-      <nav class="desktop-nav" aria-label="주요 메뉴">
-        <a href="#lawyers">변호사</a>
-        <a href="#centers">전문센터</a>
-        <a href="#principle">유일의 원칙</a>
-        <a href="#contact">상담안내</a>
+
+
+      <!-- Desktop Navigation -->
+      <nav
+        class="nav"
+        aria-label="주요 메뉴"
+      >
+        <a href="#lawyers">
+          변호사
+        </a>
+
+        <a href="#centers">
+          전문센터
+        </a>
+
+        <a href="#contact">
+          상담안내
+        </a>
       </nav>
-      <button class="menu-button" type="button" aria-label="메뉴 열기"><span></span></button>
+
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <img
+          src="assets/icons/menu.svg"
+          alt=""
+        >
+      </button>
+
     </div>
+
+
+    <!-- Mobile Navigation -->
+    <nav
+      class="mobile-menu"
+      id="mobileMenu"
+      aria-label="모바일 메뉴"
+    >
+      <a href="#lawyers">
+        변호사
+      </a>
+
+      <a href="#centers">
+        전문센터
+      </a>
+
+      <a href="#contact">
+        상담안내
+      </a>
+    </nav>
   </header>
 
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
   <main id="top">
-    <section class="hero">
-      <img class="hero-image" src="assets/hero/building.jpg" alt="법무법인 유일이 위치한 건물">
-      <div class="hero-shade"></div>
-      <div class="container hero-content">
-        <p class="overline">LAW FIRM YUIL</p>
-        <h1><em>증거주의</em><span>수사 · 재판 대응</span></h1>
-        <p class="hero-copy">감정이 아닌 기록으로, 추측이 아닌 증거로 대응합니다.</p>
-        <a href="#lawyers" class="text-link">변호사 소개 <span>↓</span></a>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section
+      class="hero"
+      aria-labelledby="heroTitle"
+    >
+
+      <!-- Background Image -->
+      <div
+        class="hero-bg"
+        aria-hidden="true"
+      ></div>
+
+
+      <!-- Decorative Line -->
+      <div
+        class="hero-line"
+        aria-hidden="true"
+      ></div>
+
+
+      <div class="wrap hero-inner">
+
+        <div class="hero-content">
+
+          <p class="eyebrow">
+            LAW FIRM YUIL
+          </p>
+
+
+          <h1 id="heroTitle">
+
+            <span class="hero-gold">
+              증거주의
+            </span>
+
+            <span class="hero-white">
+              수사 · 재판 대응
+            </span>
+
+          </h1>
+
+
+          <p class="hero-copy">
+            감정이 아닌 기록으로,
+            추측이 아닌 증거로 대응합니다.
+
+            법무법인 유일은 사건의 처음부터
+            수사와 재판의 흐름을 함께 설계합니다.
+          </p>
+
+
+          <div class="hero-actions">
+
+            <a
+              class="hero-button hero-button-primary"
+              href="#contact"
+            >
+              상담 신청
+
+              <img
+                src="assets/icons/arrow.svg"
+                alt=""
+              >
+            </a>
+
+
+            <a
+              class="hero-button hero-button-outline"
+              href="#lawyers"
+            >
+              변호사 보기
+
+              <span aria-hidden="true">
+                ↓
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Scroll Guide -->
+        <div
+          class="scroll-guide"
+          aria-hidden="true"
+        >
+          <span>
+            SCROLL
+          </span>
+
+          <i></i>
+        </div>
+
       </div>
     </section>
+    <!-- =========================
+         LAWYERS
+    ========================== -->
 
-    <section class="lawyers-section" id="lawyers">
-      <div class="container">
-        <div class="section-heading section-heading-light">
+    <section
+      class="section lawyers"
+      id="lawyers"
+      aria-labelledby="lawyersTitle"
+    >
+      <div class="wrap">
+
+        <!-- Section Heading -->
+        <div class="section-head">
+
           <div>
-            <p class="overline">LAWYERS OF YUIL</p>
-            <h2>사건은<br>한 사람이 해결하지 않습니다.</h2>
+            <p class="eyebrow">
+              LAWYERS OF YUIL
+            </p>
+
+            <h2
+              class="section-title"
+              id="lawyersTitle"
+            >
+              사건은<br>
+              한 사람이 해결하지 않습니다.
+            </h2>
           </div>
-          <p>각 분야의 변호사가 함께 사건을 검토하고 하나의 전략으로 대응합니다.</p>
+
+          <p class="section-copy">
+            각 분야의 변호사가 사건을 함께 검토하고
+            수사 대응부터 재판 전략까지 하나의 방향으로 연결합니다.
+          </p>
+
         </div>
 
-        <div class="lawyer-carousel" aria-label="변호사 소개">
-          <button class="carousel-arrow prev" id="lawyerPrev" aria-label="이전 변호사">←</button>
-          <div class="lawyer-stage" id="lawyerStage"></div>
-          <button class="carousel-arrow next" id="lawyerNext" aria-label="다음 변호사">→</button>
-          <div class="carousel-dots" id="lawyerDots" aria-label="변호사 선택"></div>
+
+        <!-- =========================
+             LAWYER COVERFLOW
+        ========================== -->
+
+        <div
+          class="lawyer-stage"
+          aria-label="법무법인 유일 변호사 소개"
+        >
+
+          <div class="lawyer-track">
+
+            <!-- Lawyer 01 -->
+            <article
+              class="lawyer-card"
+              data-index="0"
+              tabindex="0"
+              aria-label="정호길 대표변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer01.png"
+                alt="정호길 대표변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  대표변호사
+                </span>
+
+                <h3 class="card-name">
+                  정호길
+                </h3>
+
+              </div>
+            </article>
+
+
+            <!-- Lawyer 02 -->
+            <article
+              class="lawyer-card"
+              data-index="1"
+              tabindex="0"
+              aria-label="김제도 변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer02.png"
+                alt="김제도 변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  변호사
+                </span>
+
+                <h3 class="card-name">
+                  김제도
+                </h3>
+
+              </div>
+            </article>
+
+
+            <!-- Lawyer 03 -->
+            <article
+              class="lawyer-card"
+              data-index="2"
+              tabindex="0"
+              aria-label="정주현 변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer03.png"
+                alt="정주현 변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  변호사
+                </span>
+
+                <h3 class="card-name">
+                  정주현
+                </h3>
+
+              </div>
+            </article>
+
+
+            <!-- Lawyer 04 -->
+            <article
+              class="lawyer-card"
+              data-index="3"
+              tabindex="0"
+              aria-label="심상한 변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer04.png"
+                alt="심상한 변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  변호사
+                </span>
+
+                <h3 class="card-name">
+                  심상한
+                </h3>
+
+              </div>
+            </article>
+
+
+            <!-- Lawyer 05 -->
+            <article
+              class="lawyer-card"
+              data-index="4"
+              tabindex="0"
+              aria-label="이경숙 변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer05.png"
+                alt="이경숙 변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  변호사
+                </span>
+
+                <h3 class="card-name">
+                  이경숙
+                </h3>
+
+              </div>
+            </article>
+
+
+            <!-- Lawyer 06 -->
+            <article
+              class="lawyer-card"
+              data-index="5"
+              tabindex="0"
+              aria-label="파트너변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer06.png"
+                alt="6번째 파트너변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  파트너변호사
+                </span>
+
+                <h3 class="card-name">
+                  성명 입력
+                </h3>
+
+              </div>
+            </article>
+
+          </div>
+
+
+          <!-- Coverflow Controls -->
+          <div
+            class="controls"
+            aria-label="변호사 카드 이동"
+          >
+
+            <button
+              class="arrow"
+              id="prev"
+              type="button"
+              aria-label="이전 변호사 보기"
+            >
+              ←
+            </button>
+
+
+            <div
+              class="dots"
+              id="dots"
+              aria-label="변호사 선택"
+            ></div>
+
+
+            <button
+              class="arrow"
+              id="next"
+              type="button"
+              aria-label="다음 변호사 보기"
+            >
+              →
+            </button>
+
+          </div>
+
         </div>
 
-        <div class="lawyer-career" id="lawyerCareer" aria-live="polite">
-          <div class="career-title">
-            <p id="careerRole">대표변호사</p>
-            <h3 id="careerName">정호길</h3>
-            <span id="careerField">형사 · 수사 및 재판 대응</span>
-          </div>
-          <div class="career-list-wrap">
-            <p>주요 경력</p>
-            <ul id="careerList"></ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="centers-section" id="centers">
-      <div class="container">
-        <div class="section-heading section-heading-dark">
-          <div>
-            <p class="overline">PRACTICE CENTERS</p>
-            <h2>분야별 전문센터</h2>
-          </div>
-          <p>사건의 성격에 따라 필요한 대응을 나누고 하나의 전략으로 연결합니다.</p>
-        </div>
+        <!-- =========================
+             LAWYER CAREER
+        ========================== -->
 
-        <div class="centers-layout">
-          <div class="center-visual">
-            <img id="centerImage" src="assets/centers/criminal.png" alt="형사센터">
-            <div class="center-visual-caption">
-              <small id="centerEnglish">CRIMINAL DEFENSE CENTER</small>
-              <h3 id="centerTitle">형사센터</h3>
+        <section
+          class="career"
+          id="career"
+          aria-live="polite"
+          aria-label="선택된 변호사의 주요 경력"
+        >
+
+          <div class="career-head">
+
+            <div>
+
+              <span
+                class="career-role"
+                id="careerRole"
+              >
+                대표변호사
+              </span>
+
+
+              <h3
+                class="career-name"
+                id="careerName"
+              >
+                정호길
+              </h3>
+
             </div>
+
+
+            <span
+              class="career-field"
+              id="careerField"
+            >
+              형사 · 수사 및 재판 대응
+            </span>
+
           </div>
-          <div class="center-list" id="centerList"></div>
+
+
+          <div class="career-content">
+
+            <p class="career-label">
+              주요 경력
+            </p>
+
+
+            <ul
+              class="career-list"
+              id="careerList"
+            >
+              <li>
+                법무법인 유일 대표변호사
+              </li>
+
+              <li>
+                25년 경력 형사전문 변호사
+              </li>
+
+              <li>
+                중대 형사사건 수사·재판 전략 총괄
+              </li>
+
+              <li>
+                구속영장·압수수색 대응
+              </li>
+
+              <li>
+                기업 및 개인 형사위기 대응 자문
+              </li>
+
+              <li>
+                다수 형사재판 및 항소심 수행
+              </li>
+            </ul>
+
+          </div>
+
+        </section>
+
+      </div>
+    </section>        <!-- =========================
+         LAWYERS
+    ========================== -->
+
+    <section
+      class="section lawyers"
+      id="lawyers"
+      aria-labelledby="lawyersTitle"
+    >
+      <div class="wrap">
+
+        <!-- Section Heading -->
+        <div class="section-head">
+
+          <div>
+            <p class="eyebrow">
+              LAWYERS OF YUIL
+            </p>
+
+            <h2
+              class="section-title"
+              id="lawyersTitle"
+            >
+              사건은<br>
+              한 사람이 해결하지 않습니다.
+            </h2>
+          </div>
+
+          <p class="section-copy">
+            각 분야의 변호사가 사건을 함께 검토하고
+            수사 대응부터 재판 전략까지 하나의 방향으로 연결합니다.
+          </p>
+
         </div>
+
+
+        <!-- =========================
+             LAWYER COVERFLOW
+        ========================== -->
+
+        <div
+          class="lawyer-stage"
+          aria-label="법무법인 유일 변호사 소개"
+        >
+
+          <div class="lawyer-track">
+
+            <!-- Lawyer 01 -->
+            <article
+              class="lawyer-card"
+              data-index="0"
+              tabindex="0"
+              aria-label="정호길 대표변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer01.png"
+                alt="정호길 대표변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  대표변호사
+                </span>
+
+                <h3 class="card-name">
+                  정호길
+                </h3>
+
+              </div>
+            </article>
+
+
+            <!-- Lawyer 02 -->
+            <article
+              class="lawyer-card"
+              data-index="1"
+              tabindex="0"
+              aria-label="김제도 변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer02.png"
+                alt="김제도 변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  변호사
+                </span>
+
+                <h3 class="card-name">
+                  김제도
+                </h3>
+
+              </div>
+            </article>
+
+
+            <!-- Lawyer 03 -->
+            <article
+              class="lawyer-card"
+              data-index="2"
+              tabindex="0"
+              aria-label="정주현 변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer03.png"
+                alt="정주현 변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  변호사
+                </span>
+
+                <h3 class="card-name">
+                  정주현
+                </h3>
+
+              </div>
+            </article>
+
+
+            <!-- Lawyer 04 -->
+            <article
+              class="lawyer-card"
+              data-index="3"
+              tabindex="0"
+              aria-label="심상한 변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer04.png"
+                alt="심상한 변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  변호사
+                </span>
+
+                <h3 class="card-name">
+                  심상한
+                </h3>
+
+              </div>
+            </article>
+
+
+            <!-- Lawyer 05 -->
+            <article
+              class="lawyer-card"
+              data-index="4"
+              tabindex="0"
+              aria-label="이경숙 변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer05.png"
+                alt="이경숙 변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  변호사
+                </span>
+
+                <h3 class="card-name">
+                  이경숙
+                </h3>
+
+              </div>
+            </article>
+
+
+            <!-- Lawyer 06 -->
+            <article
+              class="lawyer-card"
+              data-index="5"
+              tabindex="0"
+              aria-label="파트너변호사"
+            >
+              <img
+                src="assets/lawyers/lawyer06.png"
+                alt="6번째 파트너변호사"
+                loading="lazy"
+              >
+
+              <div class="card-info">
+
+                <span class="card-role">
+                  파트너변호사
+                </span>
+
+                <h3 class="card-name">
+                  성명 입력
+                </h3>
+
+              </div>
+            </article>
+
+          </div>
+
+
+          <!-- Coverflow Controls -->
+          <div
+            class="controls"
+            aria-label="변호사 카드 이동"
+          >
+
+            <button
+              class="arrow"
+              id="prev"
+              type="button"
+              aria-label="이전 변호사 보기"
+            >
+              ←
+            </button>
+
+
+            <div
+              class="dots"
+              id="dots"
+              aria-label="변호사 선택"
+            ></div>
+
+
+            <button
+              class="arrow"
+              id="next"
+              type="button"
+              aria-label="다음 변호사 보기"
+            >
+              →
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================
+             LAWYER CAREER
+        ========================== -->
+
+        <section
+          class="career"
+          id="career"
+          aria-live="polite"
+          aria-label="선택된 변호사의 주요 경력"
+        >
+
+          <div class="career-head">
+
+            <div>
+
+              <span
+                class="career-role"
+                id="careerRole"
+              >
+                대표변호사
+              </span>
+
+
+              <h3
+                class="career-name"
+                id="careerName"
+              >
+                정호길
+              </h3>
+
+            </div>
+
+
+            <span
+              class="career-field"
+              id="careerField"
+            >
+              형사 · 수사 및 재판 대응
+            </span>
+
+          </div>
+
+
+          <div class="career-content">
+
+            <p class="career-label">
+              주요 경력
+            </p>
+
+
+            <ul
+              class="career-list"
+              id="careerList"
+            >
+              <li>
+                법무법인 유일 대표변호사
+              </li>
+
+              <li>
+                25년 경력 형사전문 변호사
+              </li>
+
+              <li>
+                중대 형사사건 수사·재판 전략 총괄
+              </li>
+
+              <li>
+                구속영장·압수수색 대응
+              </li>
+
+              <li>
+                기업 및 개인 형사위기 대응 자문
+              </li>
+
+              <li>
+                다수 형사재판 및 항소심 수행
+              </li>
+            </ul>
+
+          </div>
+
+        </section>
+
       </div>
     </section>
+    <!-- ====================================
 
-    <section class="principle-section" id="principle">
-      <div class="container principle-grid">
-        <div>
-          <p class="overline">YUIL PRINCIPLE</p>
-          <h2>말보다 기록,<br><em>주장보다 증거.</em></h2>
-        </div>
-        <div class="principles">
-          <article><span>01</span><h3>기록을 먼저 봅니다.</h3><p>진술, 문서, 영상과 객관적 자료를 사건 순서에 맞게 정리합니다.</p></article>
-          <article><span>02</span><h3>쟁점을 분명히 합니다.</h3><p>수사기관과 법원이 판단할 핵심 쟁점에 집중합니다.</p></article>
-          <article><span>03</span><h3>절차를 설계합니다.</h3><p>초기 대응부터 재판까지 일관된 방향으로 준비합니다.</p></article>
-          <article><span>04</span><h3>함께 검토합니다.</h3><p>분야별 변호사가 교차 검토해 놓치는 부분을 줄입니다.</p></article>
-        </div>
-      </div>
-    </section>
+PRACTICE CENTER
 
-    <section class="contact-section" id="contact">
-      <div class="container contact-inner">
-        <div><p class="overline">CONSULTATION</p><h2>사건의 시작부터<br>함께하겠습니다.</h2></div>
-        <div class="contact-actions"><a href="tel:0000000000">전화 상담 <span>→</span></a><a href="#">카카오톡 상담 <span>→</span></a></div>
-      </div>
-    </section>
-  </main>
+==================================== -->
 
+<section
+    class="section centers"
+    id="centers"
+>
+
+<div class="wrap section-head">
+
+<div>
+
+<p class="eyebrow">
+PRACTICE CENTERS
+</p>
+
+<h2 class="section-title">
+
+분야별
+
+전문센터
+
+</h2>
+
+</div>
+
+<p class="section-copy">
+
+사건의 성격에 따라
+
+필요한 대응을 나누고
+
+하나의 전략으로 연결합니다.
+
+</p>
+
+</div>
+
+
+
+<div class="wrap center-grid">
+
+<!-- LEFT IMAGE -->
+
+<div class="center-image">
+
+<img
+id="centerImage"
+
+src="assets/centers/criminal-center.png"
+
+alt="형사센터"
+
+>
+
+<div class="center-caption">
+
+<small id="centerEn">
+
+CRIMINAL CENTER
+
+</small>
+
+<h3 id="centerTitle">
+
+형사센터
+
+</h3>
+
+</div>
+
+</div>
+
+
+
+<!-- RIGHT -->
+
+<div class="center-list">
+  <button
+
+class="center-item active"
+
+type="button"
+
+data-title="형사센터"
+
+data-en="CRIMINAL CENTER"
+
+data-image="assets/centers/criminal-center.png"
+
+>
+
+<span class="num">
+
+01
+
+</span>
+
+<span class="name">
+
+형사센터
+
+</span>
+
+<span class="arr">
+
+→
+
+</span>
+
+</button>
+<button
+
+class="center-item"
+
+type="button"
+
+data-title="민사센터"
+
+data-en="CIVIL CENTER"
+
+data-image="assets/centers/civil-center.png"
+
+>
+
+<span class="num">
+
+02
+
+</span>
+
+<span class="name">
+
+민사센터
+
+</span>
+
+<span class="arr">
+
+→
+
+</span>
+
+</button>
+<button
+
+class="center-item"
+
+type="button"
+
+data-title="가사센터"
+
+data-en="FAMILY CENTER"
+
+data-image="assets/centers/family-center.png"
+
+>
+
+<span class="num">
+
+03
+
+</span>
+
+<span class="name">
+
+가사센터
+
+</span>
+
+<span class="arr">
+
+→
+
+</span>
+
+</button>
+<button
+
+class="center-item"
+
+type="button"
+
+data-title="회생센터"
+
+data-en="REHABILITATION CENTER"
+
+data-image="assets/centers/recovery-center.png"
+
+>
+
+<span class="num">
+
+04
+
+</span>
+
+<span class="name">
+
+회생센터
+
+</span>
+
+<span class="arr">
+
+→
+
+</span>
+
+</button
+<button
+
+class="center-item"
+
+type="button"
+
+data-title="공증센터"
+
+data-en="NOTARY CENTER"
+
+data-image="assets/centers/notary-center.png"
+
+>
+
+<span class="num">
+
+05
+
+</span>
+
+<span class="name">
+
+공증센터
+
+</span>
+
+<span class="arr">
+
+→
+
+</span>
+
+</button>
+</div>
+
+</div>
+
+</section>
+<!-- ===================================
+CONTACT
+=================================== -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+<div class="contact-overlay"></div>
+
+<div class="wrap contact-inner">
+
+<div class="contact-content">
+
+<p class="eyebrow">
+
+LAW FIRM YUIL
+
+</p>
+
+<h2>
+
+사건은<br>
+
+시간이 지나면<br>
+
+불리해집니다.
+
+</h2>
+
+<p>
+
+지금 상담하면
+
+수사 초기부터
+
+전략을 설계할 수 있습니다.
+
+</p>
+
+<div class="contact-buttons">
+
+<a
+
+href="tel:000000000"
+
+class="contact-button"
+
+>
+
+<img
+
+src="assets/icons/phone.svg"
+
+alt=""
+
+>
+
+전화 상담
+
+</a>
+
+<a
+
+href="#"
+
+class="contact-button"
+
+>
+
+<img
+
+src="assets/icons/kakao.svg"
+
+alt=""
+
+>
+
+카카오톡 상담
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section
   <footer>
-    <div class="container footer-inner">
-      <div><strong>법무법인 유일</strong><p>대표전화 0000-0000 · 주소 입력<br>광고책임변호사 입력 · 사업자등록번호 입력</p></div>
-      <p>© LAW FIRM YUIL. ALL RIGHTS RESERVED.</p>
-    </div>
-  </footer>
 
-  <script src="js/app.js"></script>
-</body>
-</html>
+<div class="wrap footer-inner">
+
+<div class="footer-left">
+
+<strong>
+
+법무법인 유일
+
+</strong>
+
+<p>
+
+대표전화
+
+0000-0000
+
+</p>
+
+<p>
+
+서울특별시
+
+○○구
+
+○○로
+
+00
+
+</p>
+
+</div>
+
+<div class="footer-right">
+
+<p>
+
+© LAW FIRM YUIL
+
+</p>
+
+<p>
+
+ALL RIGHTS RESERVED.
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
