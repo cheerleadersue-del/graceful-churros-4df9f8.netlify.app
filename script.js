@@ -1176,3 +1176,281 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+/* =========================================
+   PHASE 1 — GLOBAL TYPOGRAPHY + HERO
+========================================= */
+
+:root {
+  --yuil-black: #090a0b;
+  --yuil-black-soft: #111214;
+  --yuil-ivory: #f4f1eb;
+  --yuil-gold: #b99b67;
+  --yuil-gold-light: #d5c096;
+  --yuil-muted: rgba(255, 255, 255, 0.62);
+  --yuil-line: rgba(255, 255, 255, 0.12);
+  --yuil-max: 1240px;
+  --yuil-ease: cubic-bezier(0.22, 0.8, 0.22, 1);
+}
+
+/* 전체 글꼴을 더 젊고 깔끔하게 */
+html,
+body,
+button,
+input,
+textarea,
+select {
+  font-family:
+    Pretendard,
+    "Pretendard Variable",
+    "SUIT Variable",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--yuil-black);
+  color: #fff;
+  letter-spacing: -0.015em;
+  overflow-x: hidden;
+}
+
+/* 모든 주요 콘텐츠가 너무 왼쪽으로 치우치지 않도록 */
+.wrap,
+.hero-container {
+  width: min(calc(100% - 80px), var(--yuil-max));
+  margin-inline: auto;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--yuil-black);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 8, 9, 0.86) 0%,
+      rgba(7, 8, 9, 0.58) 43%,
+      rgba(7, 8, 9, 0.22) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(7, 8, 9, 0.76) 0%,
+      rgba(7, 8, 9, 0.05) 55%
+    ),
+    url("assets/hero-building.png")
+    center center / cover
+    no-repeat;
+
+  transform: scale(1.025);
+}
+
+/* 사진이 안 보일 경우 경로가 틀린 것이므로
+   assets/hero-building.png를 정확히 확인하세요. */
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  padding: 130px 0 90px;
+}
+
+.hero-content {
+  width: min(100%, 620px);
+  margin-left: clamp(0px, 5vw, 72px);
+}
+
+.hero-label {
+  margin: 0 0 24px;
+  color: var(--yuil-gold-light);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+}
+
+.hero-title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(38px, 4.4vw, 66px);
+  font-weight: 400;
+  line-height: 1.23;
+  letter-spacing: -0.055em;
+  word-break: keep-all;
+}
+
+.hero-title span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--yuil-gold-light);
+  font-weight: 500;
+}
+
+.hero-description {
+  margin: 30px 0 0;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 38px;
+}
+
+.hero-cta,
+.hero-more {
+  min-height: 50px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  font-size: 12px;
+  font-weight: 500;
+  transition:
+    transform 0.3s var(--yuil-ease),
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* 고급스러운 골드 상담 버튼 */
+.hero-cta {
+  min-width: 158px;
+  background:
+    linear-gradient(
+      135deg,
+      #c7ad7a 0%,
+      #aa8954 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #101010;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  background:
+    linear-gradient(
+      135deg,
+      #d2bd92 0%,
+      #b4935d 100%
+    );
+}
+
+.hero-more {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.025);
+  color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.hero-more:hover {
+  transform: translateY(-2px);
+  border-color: var(--yuil-gold);
+}
+
+/* 태블릿 */
+@media (max-width: 980px) {
+  .wrap,
+  .hero-container {
+    width: min(calc(100% - 48px), var(--yuil-max));
+  }
+
+  .hero-content {
+    margin-left: 3vw;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 7vw, 58px);
+  }
+}
+
+/* 모바일 */
+@media (max-width: 640px) {
+  .wrap,
+  .hero-container {
+    width: calc(100% - 32px);
+  }
+
+  .hero {
+    min-height: 90svh;
+  }
+
+  .hero-bg {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7, 8, 9, 0.82) 0%,
+        rgba(7, 8, 9, 0.42) 62%,
+        rgba(7, 8, 9, 0.18) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(7, 8, 9, 0.92) 0%,
+        rgba(7, 8, 9, 0.08) 56%
+      ),
+      url("assets/hero-building.png")
+      58% center / cover
+      no-repeat;
+  }
+
+  .hero-container {
+    min-height: 90svh;
+    align-items: flex-end;
+    padding: 110px 0 64px;
+  }
+
+  .hero-content {
+    margin-left: 0;
+  }
+
+  .hero-label {
+    margin-bottom: 17px;
+    font-size: 9px;
+  }
+
+  .hero-title {
+    font-size: 39px;
+    line-height: 1.22;
+  }
+
+  .hero-description {
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .hero-cta,
+  .hero-more {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
