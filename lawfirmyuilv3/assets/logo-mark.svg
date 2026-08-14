@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="법무법인 유일 심볼">
+  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+    <!-- 바깥 프레임 -->
+    <path d="M6 5h36v10.5"/>
+    <path d="M6 5v38"/>
+    <path d="M42 43h-8"/>
+    <path d="M6 43h8"/>
+
+    <!-- 안쪽 모노그램 — 기둥 두 개와 중앙의 저울대 -->
+    <path d="M15 15v20"/>
+    <path d="M33 15v20"/>
+    <path d="M24 12v26"/>
+    <path d="M15 15 24 22l9-7"/>
+  </g>
+</svg>
